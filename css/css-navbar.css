@@ -1,0 +1,65 @@
+.all{
+    width: 100%;
+  height: 100vh;
+  
+  height:100vh;
+  /*border: solid 1px;
+  border-color: black;*/
+  overflow:hidden;
+}
+
+.logoImg img {
+    border-radius: 20%;
+
+}
+
+.nvgdBar {
+    margin: 0px 0px 0px 40px;
+}
+
+.navbar {
+    border-radius: 3%;
+}
+
+/* barra vertival */
+hr{
+    border: solid 3px;
+    border-color: white;
+    box-sizing:border-box;
+    width:100%;  
+    color: white;
+}
+
+.tracinho{
+    margin:  0px 10px 0px 10px;
+}
+
+
+
+.areaLogo{
+    width: 100%;
+}
+
+
+.navegadorBar{
+
+    margin: 10px 0px 0px 0px;
+    display: flex;
+    width: 100%;
+
+}
+
+.nvgdBar{
+    width: 95%;
+}
+
+.collapse{
+    background-image: linear-gradient(rgb(70, 77, 78)); 
+}
+
+.navegador{
+    
+    width:15%;
+    background-color: #00cc00;
+    flex-direction: row-reverse;
+}

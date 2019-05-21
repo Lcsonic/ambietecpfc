@@ -37,7 +37,7 @@
                       </label>
                   </div>
                   <div class="btnEntrar">
-                      <a href="empresas.php"> <!-- Link para pagina "empresas.php" !-->
+                      <a href="menu.php"> <!-- Link para pagina "menu.php" !-->
                       <button type="button" class="btn btn-success">Entrar</button>
                       </a>       
                   </div>

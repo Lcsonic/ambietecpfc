@@ -1,59 +1,3 @@
-.all{
-    width: 100%;
-  height: 100vh;
-  height:100vh;
-  /*border: solid 1px;
-  border-color: black;*/
-  overflow:hidden;
-}
-
-/* barra vertival */
-hr{
-    border: solid 3px;
-    border-color: white;
-    box-sizing:border-box;
-    width:100%;  
-    color: white;
-}
-
-.tracinho{
-    margin:  0px 10px 0px 10px;
-}
-
-.navegadorBar{
-
-    margin: 10px 0px 0px 0px;
-    display: flex;
-    width: 100%;
-
-}
-
-.nvgdBar{
-    width: 95%;
-}
-
-.navegadorLogo{
-    
-}
-
-.collapse{
-    background-image: linear-gradient(rgb(70, 77, 78)); 
-}
-
-
-.areaLogo{
-    /*border: solid 2px;
-    border-color: indigo;*/
-    width: 100%;
-}
-
-.navegador{
-    
-    width:15%;
-    background-color: #00cc00;
-    flex-direction: row-reverse;
-}
-
 .navegadorTxt{
     font-family: 'Poppins', sans-serif;
     font-size: 25px;
@@ -62,10 +6,6 @@ hr{
     width: 100%;
     max-width: 100px;
     padding: 20px 0px 0px 0px;
-}
-
-.btnTopo{
-    
 }
 
 .btn1{

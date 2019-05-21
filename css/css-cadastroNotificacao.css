@@ -11,7 +11,7 @@ body{margin: 0;}
 }
 
 .cadNotificacao {
-  margin: 20px 250px;
+  margin: 0px 250px;
   color: green;
 }
 
@@ -28,7 +28,7 @@ body{margin: 0;}
   text-decoration: none;
   display: inline-block;
   font-size: 15x;
-  margin: 4px 2;
+  margin: 4px 2px;
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
   cursor: pointer;

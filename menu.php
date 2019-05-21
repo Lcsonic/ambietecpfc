@@ -1,6 +1,3 @@
-<!-- implantando conexao !-->
-    <?php include("classes/conexao.php") ?>
-
     <!DOCTYPE html>
     <html lang="en">
 
@@ -10,10 +7,15 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Painel de Empresas</title>
         <!- Imports -!>
-            <link rel="stylesheet" href="./css/css-empresas.css"> <!-- css da página de listar empresas !-->
-            <link rel="stylesheet" href="./css/css-navbar.css"> <!-- css do navbar de todas as páginas !-->
+            <link rel="stylesheet" href="./css/css-navbar.css">
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+            <style>
+                .imgmeio {
+                    max-width: 700px;
+                    margin: auto;
+                }
+            </style>
     </head>
 
     <body>
@@ -37,7 +39,7 @@
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item" href="cadastroEmpresa.php">Cadastrar</a>
                                         <a class="dropdown-item" href="empresas.php">Listar</a>
-                                     </div>
+                                    </div>
                                 </li>
 
                                 <li class="nav-item dropdown">
@@ -50,76 +52,23 @@
                                     </div>
                                 </li>
 
+
                         </div>
                     </nav>
                 </div>
-
                 <div class="navegadorLogo">
                     <div class="logoImg">
-                        <img src="https://i.imgur.com/XGpUJgO.png" alt="imagemLogo" width=60px>
+                        <img src="Imagens/logo-menu.png" alt="imagemLogo" width=60px>
                     </div>
-
-
                 </div>
-
             </div>
-
-
-
-            <div class="areaLogo">
-
-            </div>
-
             <div class="divisoria">
                 <hr>
             </div>
-
-            <div class="areaBranca">
-
-                <div class="descrAba">
-
-                    <div class="descrImg">
-                        <img src="https://cdn0.iconfinder.com/data/icons/lined-global-business/48/a-14-512.png" alt="" width=47px>
-                    </div>
-
-                    <div class="descrTxt">
-                        Painel de empresas
-                    </div>
-
-                </div>
-
-                <div class="areaBlank">
-
-                    <div class="enum">
-
-                        <div class="idTxt">
-                            ID
-                        </div>
-
-                        <div class="nomeTxt">
-                            Nome Fantasia
-                        </div>
-
-                        <div class="cnpjTxt">
-                            Cnpj
-                        </div>
-
-                        <div class="cidadeTxt">
-                            Cidade
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="btnCadastro">
-                    <a href="cadastroEmpresa.php">
-                        <!-- Link para pagina "documentos.php" !-->
-                            <button type="button" class="btn btn-success">Adicionar Empresa</button>
-                    </a>
-                </div>
-
+            <div class="imgmeio">
+                <img src="Imagens/logo-menu.png" alt="imagemLogo" width=700px>
             </div>
+        </div>
 
         </div>
 
