@@ -36,7 +36,7 @@
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item" href="cadastroEmpresa.php">Cadastrar</a>
                                         <a class="dropdown-item" href="empresas.php">Listar</a>
-                                     </div>
+                                    </div>
                                 </li>
 
                                 <li class="nav-item dropdown">
@@ -108,6 +108,14 @@
                         </div>
 
                     </div>
+
+
+                    <div class="crudListar">
+
+                        
+                        
+                    </div>
+
 
                 </div>
 
