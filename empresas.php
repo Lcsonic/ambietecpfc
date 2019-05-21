@@ -112,7 +112,11 @@
 
                     <div class="crudListar">
 
-                        
+                        <?php
+
+                            $result_empresas = "SELECT * FROM cliente_empresa";
+                            $resultado_empresa = mysqli_query($conexao);
+                         ?>
                         
                     </div>
 
