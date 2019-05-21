@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -33,37 +34,37 @@
           <div class="form-row">
             <div class="form-group col-md-4">
               <label for="cnpj">CNPJ </label><span class="asterisco-ver">*</span>
-              <input type="text" class="form-control" name="cnpj" id="cnpjJS" placeholder="Infome o CNPJ da empresa">
+              <input type="text" class="form-control" name="cnpj" id="cnpjJS" placeholder="Infome o CNPJ da empresa" required >
             </div>
 
             <div class="form-group col-md-4">
               <label for="numInscricao">Número de Inscrição </label><span class="asterisco-ver">*</span>
-              <input type="text" class="form-control" name="numInscricao" id="numInscricaoJS" placeholder="Número de inscrição">
+              <input type="text" class="form-control" name="numInscricao" id="numInscricaoJS" placeholder="Número de inscrição" required >
             </div>
           </div>
 
           <div class="form-group">
             <label for="nomeEmpresa">Nome da Empresa </label><span class="asterisco-ver">*</span>
-            <input type="text" class="form-control" name="nomeEmpresa" id="nomeEmpresaJS" placeholder="Nome da empresa">
+            <input type="text" class="form-control" name="nomeEmpresa" id="nomeEmpresaJS" placeholder="Nome da empresa" required >
 
             <label for="nomeFantasia">Nome Fantasia </label><span class="asterisco-ver">*</span>
-            <input type="text" class="form-control" name="nomeFantasia" id="nomeFantasiaJS" placeholder="Nome fantasia">
+            <input type="text" class="form-control" name="nomeFantasia" id="nomeFantasiaJS" placeholder="Nome fantasia" required >
           </div>
 
           <div class="form-row">
             <div class="form-group col-md-4">  
               <label for="descAtv">Principal atividade </label><span class="asterisco-ver">*</span>
-              <input type="text" class="form-control" name="descAtv" id="descAtvJS" placeholder="Descrição da principal atividade">
+              <input type="text" class="form-control" name="descAtv" id="descAtvJS" placeholder="Descrição da principal atividade" required >
             </div>  
 
             <div class="form-group col-md-4">
               <label for="telefone">Telefone </label><span class="asterisco-ver">*</span>
-              <input type="text" class="form-control ttinput" name="telefone" id="telefoneJS" placeholder="Telefone">
+              <input type="text" class="form-control ttinput" name="telefone" id="telefoneJS" placeholder="Telefone" required >
             </div>
 
             <div class="form-group col-md-4">
               <label for="telefoneOpc">Telefone Opcional </label>
-              <input type="text" class="form-control ttinput" name="telefoneOpc" id="telefoneOpcJS" placeholder="Telefone Opicional">
+              <input type="text" class="form-control ttinput" name="telefoneOpc" id="telefoneOpcJS" placeholder="Telefone Opicional" required >
             </div>  
           </div>
 
@@ -72,12 +73,12 @@
             <div class="form-row">
               <div class="form-group col-md-6"> 
                 <label for="responsavel">Responsável </label><span class="asterisco-ver">*</span>
-                <input type="text" class="form-control" name="responsavel" id="responsavelJS" placeholder="Responsável">
+                <input type="text" class="form-control" name="responsavel" id="responsavelJS" placeholder="Responsável" required >
               </div>
 
               <div class="form-group col-md-6"> 
                 <label for="email">E-mail </label><span class="asterisco-ver">*</span>
-                <input type="email" class="form-control" name="email" id="emailJS" placeholder="E-mail">
+                <input type="email" class="form-control" name="email" id="emailJS" placeholder="E-mail" required >
               </div>  
             </div>  
           
@@ -85,29 +86,29 @@
             <div class="form-group">
 
               <label for="Endereco">Endereço </label><span class="asterisco-ver">*</span>
-              <input type="text" class="form-control" name="endereco" id="enderecoJS" placeholder="Endereço">
+              <input type="text" class="form-control" name="endereco" id="enderecoJS" placeholder="Endereço" required >
             </div>
 
           <div class="form-row df">
 
             <div class="form-group col-md-2">
               <label for="numero">Número </label><span class="asterisco-ver">*</span>
-              <input type="text" class="form-control" name="numero" id="numeroJS" placeholder="Número">
+              <input type="text" class="form-control" name="numero" id="numeroJS" placeholder="Número" required >
             </div>
 
             <div class="form-group col-md-3">
               <label for="bairro">Bairro </label><span class="asterisco-ver">*</span>
-              <input type="text" class="form-control" name="bairro" id="bairroJS" placeholder="Bairro">
+              <input type="text" class="form-control" name="bairro" id="bairroJS" placeholder="Bairro" required >
             </div>
 
             <div class="form-group col-md-3">
               <label for="cidade">Cidade </label><span class="asterisco-ver">*</span>
-              <input type="text" class="form-control" name="cidade" id="cidadeJS" placeholder="Cidade">
+              <input type="text" class="form-control" name="cidade" id="cidadeJS" placeholder="Cidade" required >
             </div>
 
             <div class="form-group col-md-2">
               <label for="cep">CEP </label><span class="asterisco-ver">*</span>
-              <input type="text" class="form-control" name="cep" id="cepJS" placeholder="CEP">
+              <input type="text" class="form-control" name="cep" id="cepJS" placeholder="CEP" required >
             </div>
 
             <div class="form-group col-md-2">
@@ -148,11 +149,11 @@
           <div class="form-row">
             <div class="form-group col-md-4">
               <label for="senha">Senha </label><span class="asterisco-ver">*</span>
-              <input type="password" name="senha" class="form-control" id="senhaJS" placeholder="Senha">
+              <input type="password" name="senha" class="form-control" id="senhaJS" placeholder="Senha" required >
             </div>
             <div class="form-group col-md-4">
               <label for="confSenha">Confirmar senha </label>
-              <input type="password" name="confSenha" class="form-control" id="confSenhaJS" placeholder="Confirmar senha">
+              <input type="password" name="confSenha" class="form-control" id="confSenhaJS" placeholder="Confirmar senha" required >
             </div>
           </div>
 
@@ -170,6 +171,16 @@
     </div>
   </div>
 </body>
+
+<script>
+
+<?php
+include ("validacaoCnpj/validarCnpj.php");
+
+$cnpjJS
+?>
+
+</script>
 
 </html>
 

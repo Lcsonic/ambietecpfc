@@ -1,28 +1,32 @@
 <?php
 include ("./../conexao.php");
 
+$erro = false;
 
-/*Captura de campos*/ 
+// Verifica se o POST tem algum valor
+if ( !isset( $_POST ) || empty( $_POST ) ) {
+	$erro = 'Nada foi postado.';
+}
+
+// Cria as variáveis dinamicamente
+foreach ( $_POST as $chave => $valor ) {
+	// Remove todas as tags HTML
+	// Remove os espaços em branco do valor
+	$$chave = trim( strip_tags( $valor ) );
+	
+	// Verifica se tem algum valor nulo
+	if ( empty ( $valor ) ) {
+		$erro = 'Existem campos em branco.';
+	}
+}
+
+// Verifica se $idade realmente existe e se é um número. 
+// Também verifica se não existe nenhum erro anterior
+if ( ( ! isset( $cnpjJS) || ! is_numeric( $idade ) ) && !$erro ) {
+	$erro = 'A idade deve ser um valor número.';
+}
 
 
-
-
-// $cnpj = filter_input(INPUT_POST, 'cnpj', FILTER_SANITIZE_STRING);
-// $nomeEmpresa = filter_input(INPUT_POST, 'razaoSocial', FILTER_SANITIZE_STRING);
-// $nomeFantasia = filter_input(INPUT_POST, 'nomeFantasia', FILTER_SANITIZE_STRING);
-// $endereco = filter_input(INPUT_POST, 'endereco', FILTER_SANITIZE_STRING);
-// $numero = filter_input(INPUT_POST, 'numero', FILTER_SANITIZE_STRING);
-// $bairro = filter_input(INPUT_POST, 'bairro', FILTER_SANITIZE_STRING);
-// $cidade = filter_input(INPUT_POST, 'cidade', FILTER_SANITIZE_STRING);
-// $cep = filter_input(INPUT_POST, 'cep', FILTER_SANITIZE_STRING);
-// $uf = filter_input(INPUT_POST, 'uf', FILTER_SANITIZE_STRING);
-// $telefone = filter_input(INPUT_POST, 'telefone', FILTER_SANITIZE_STRING);
-// $telefoneOpc = filter_input(INPUT_POST, 'telefoneOpc', FILTER_SANITIZE_STRING);
-// $descAtv = filter_input(INPUT_POST, 'descAtv', FILTER_SANITIZE_STRING);
-// $responsavel = filter_input(INPUT_POST, 'responsavel', FILTER_SANITIZE_STRING);
-// $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
-// $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_STRING);
-// $confSenha = filter_input(INPUT_POST, 'confSenha', FILTER_SANITIZE_STRING);
 
 
 
@@ -43,34 +47,25 @@ $cep =  $_POST ['cep'];
 $uf =  $_POST ['uf'];
 $senha =  $_POST ['senha'];
 $confSenha =  $_POST ['confSenha'];
+
+
 /* Teste */
 //echo "$cnpj, $nomeEmpresa, $nomeFantasia ,$endereco ,$bairro, $cidade ,$cep ,$uf ,$telefone";
 
-
-/* nesse trecho vou colocar a chamada da procedure 
-ruaEndereço_empresa,
-numeroEndereço_empresa,
-bairroEndereço_empresa,
-cidadeEndereço_empresa,
-cepEndereco_empresa,
-ufEndereco_empresa,
-
-*/
 
 $insert_empresa = "CALL `green_alert`.`PROC_IN_EMPRESA`('$nomeEmpresa','$nomeFantasia','$cnpj',
 '$numInscricao','$email','$responsavel','$telefone','$telefoneOpc','$descAtv','$endereco',
 $numero,'$bairro','$cidade','$cep','$uf','$senha','$confSenha');";
 
 
-
-
-
 //mysqli_query($conexao,$result_empresa);
 $result_empresa = mysqli_query ($conexao, $insert_empresa);
 
 
+//Validação dos campos
 
 
+/*
 // function verifique() //função verifica se o dado foi inserido
 // {
     if ($result_empresa = '') {
@@ -78,8 +73,14 @@ $result_empresa = mysqli_query ($conexao, $insert_empresa);
     } else {
         echo 'Salvo com Sucesso!';
     };
-// }
+// } */
 
+// Verifica se $email realmente existe e se é um email. 
+// Também verifica se não existe nenhum erro anterior
+if ( ( ! isset( $email ) || ! filter_var( $email, FILTER_VALIDATE_EMAIL ) ) && !$erro ) {
+    $erro = 'Envie um email válido.';
+    echo $erro;
+}
 
 ?>
 
