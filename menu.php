@@ -24,12 +24,12 @@
 
             <div class="navegadorBar">
 
-
                 <div class="nvgdBar">
+
                     <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
                             <ul class="navbar-nav mr-auto">
 
                                 <li class="nav-item dropdown">
@@ -65,7 +65,7 @@
             <div class="divisoria">
                 <hr>
             </div>
-            <div class="imgmeio">
+            <div class="imgmeio">          <!-- imagem do centro da página !-->
                 <img src="Imagens/logo-menu.png" alt="imagemLogo" width=700px>
             </div>
         </div>
