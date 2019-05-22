@@ -114,8 +114,11 @@
 
                         <?php
 
-                            $result_empresas = "SELECT * FROM cliente_empresa";
-                            $resultado_empresa = mysqli_query($conexao);
+                            $result_empresa = "SELECT * FROM cliente_empresa";
+                            $resultado_empresa = mysqli_query($conexao, $result_empresa);
+                            while($row_usuario = mysqli_fetch_assoc($resultado_empresa)){
+                                echo $row_usuario ['id_empresa'];
+                            }
                          ?>
                         
                     </div>
