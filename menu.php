@@ -15,6 +15,10 @@
                     max-width: 700px;
                     margin: auto;
                 }
+
+                .sair {
+                    margin: 0px 0px 0px 16px;
+                }
             </style>
     </head>
 
@@ -24,13 +28,17 @@
 
             <div class="navegadorBar">
 
-                <div class="nvgdBar">
 
+                <div class="nvgdBar">
                     <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
                             <ul class="navbar-nav mr-auto">
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="menu.php">Menu Principal</a>
+                                </li>
 
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -52,20 +60,42 @@
                                     </div>
                                 </li>
 
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Usuário
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="cadastroUsuario.php">Cadastrar Usuário</a>
+                                        <a class="dropdown-item" href="#">Editar Usuário</a>
+                                    </div>
+                                </li>
 
+
+                            </ul>
+                            <?php
+                            session_start();
+                            echo "Usuario: " . $_SESSION['usuarioNome'];
+                            ?>
+                            <br>
+                            <a href="sair.php" class="sair">Sair</a>
                         </div>
                     </nav>
                 </div>
+
                 <div class="navegadorLogo">
                     <div class="logoImg">
-                        <img src="Imagens/logo-menu.png" alt="imagemLogo" width=60px>
+                        <img src="https://i.imgur.com/XGpUJgO.png" alt="imagemLogo" width=60px>
                     </div>
+
+
                 </div>
+
             </div>
             <div class="divisoria">
                 <hr>
             </div>
-            <div class="imgmeio">          <!-- imagem do centro da página !-->
+            <div class="imgmeio">
+                <!-- imagem do centro da página !-->
                 <img src="Imagens/logo-menu.png" alt="imagemLogo" width=700px>
             </div>
         </div>

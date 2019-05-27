@@ -9,8 +9,8 @@
 
 	if(!$conn){
         die("Falha na conexao: " . mysqli_connect_error());
-    }else{
-        echo "Conexao realizada com sucesso";
+    }else{      // Tirar as barras caso queira fazer teste de conexão
+       // echo "Conexao realizada com sucesso";
     }   
 
 ?>
