@@ -33,11 +33,6 @@
               <label for="cnpj">CNPJ </label><span class="asterisco-ver">*</span>
               <input type="text" class="form-control" name="cnpj" id="cnpjJS" placeholder="Infome o CNPJ da empresa" required>
             </div>
-
-            <div class="form-group col-md-4">
-              <label for="numInscricao">Número de Inscrição </label><span class="asterisco-ver">*</span>
-              <input type="text" class="form-control" name="numInscricao" id="numInscricaoJS" placeholder="Número de inscrição" required>
-            </div>
           </div>
 
           <div class="form-group">
@@ -149,7 +144,7 @@
               <input type="password" name="senha" class="form-control" id="senhaJS" placeholder="Senha" required>
             </div>
             <div class="form-group col-md-4">
-              <label for="confSenha">Confirmar senha </label>
+              <label for="confSenha">Confirmar senha </label><span class="asterisco-ver">*</span>
               <input type="password" name="confSenha" class="form-control" id="confSenhaJS" placeholder="Confirmar senha" required>
             </div>
           </div>
@@ -157,7 +152,7 @@
 
           <div class="form-group buttons">
             <a href="empresas.php">
-              <!- Link para pagina "empresas.php" -!>
+              <!-- Link para pagina "empresas.php" !-->
                 <button type="button" class="btn btn-danger buttons">Cancelar</button>
             </a>
             <input type="submit" value="Adicionar" class="btn btn-success buttons">

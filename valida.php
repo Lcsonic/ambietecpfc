@@ -6,7 +6,7 @@
     if((isset($_POST['email'])) && (isset($_POST['senha']))){
         $usuario = mysqli_real_escape_string($conn, $_POST['email']); //Escapar de caracteres especiais, como aspas, prevenindo SQL injection
         $senha = mysqli_real_escape_string($conn, $_POST['senha']);
-        $senha = md5($senha);
+        //$senha = md5($senha);
             
         //Buscar na tabela usuario o usuário que corresponde com os dados digitado no formulário
         $result_usuario = "SELECT * FROM usuarios WHERE email = '$usuario' && senha = '$senha' LIMIT 1";
@@ -22,9 +22,9 @@
             if($_SESSION['usuarioNiveisAcessoId'] == "1"){
                 header("Location: menu.php");
             }elseif($_SESSION['usuarioNiveisAcessoId'] == "2"){
-                header("Location: colaborador.php");
+                header("Location: documentos.php");
             }else{
-                header("Location: cliente.php");
+                header("Location: menu.php");
             }
         //Não foi encontrado um usuario na tabela usuário com os mesmos dados digitado no formulário
         //redireciona o usuario para a página de login

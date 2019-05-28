@@ -33,7 +33,6 @@ if ( ( ! isset( $cnpjJS) || ! is_numeric( $idade ) ) && !$erro ) {
 $nomeEmpresa =  $_POST ['nomeEmpresa'];
 $nomeFantasia =  $_POST ['nomeFantasia'];
 $cnpj = $_POST ['cnpj'];
-$numInscricao = $_POST ['numInscricao'];
 $email =  $_POST ['email'];
 $responsavel=  $_POST ['responsavel'];
 $telefone =  $_POST ['telefone'];
@@ -53,13 +52,13 @@ $confSenha =  $_POST ['confSenha'];
 //echo "$cnpj, $nomeEmpresa, $nomeFantasia ,$endereco ,$bairro, $cidade ,$cep ,$uf ,$telefone";
 
 
-$insert_empresa = "CALL `green_alert`.`PROC_IN_EMPRESA`('$nomeEmpresa','$nomeFantasia','$cnpj',
-'$numInscricao','$email','$responsavel','$telefone','$telefoneOpc','$descAtv','$endereco',
+$insert_empresa = "CALL `green_alert`.`PROC_IN_EMPRESA`('$nomeEmpresa','$nomeFantasia','$cnpj'
+,'$email','$responsavel','$telefone','$telefoneOpc','$descAtv','$endereco',
 $numero,'$bairro','$cidade','$cep','$uf','$senha','$confSenha');";
 
 
 //mysqli_query($conexao,$result_empresa);
-$result_empresa = mysqli_query ($conexao, $insert_empresa);
+$result_empresa = mysqli_query ($conn, $insert_empresa);
 
 
 //Validação dos campos

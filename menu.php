@@ -16,9 +16,6 @@
                     margin: auto;
                 }
 
-                .sair {
-                    margin: 0px 0px 0px 16px;
-                }
             </style>
     </head>
 
@@ -62,11 +59,11 @@
 
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Usuário
+                                        Funcionário
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="cadastroUsuario.php">Cadastrar Usuário</a>
-                                        <a class="dropdown-item" href="#">Editar Usuário</a>
+                                        <a class="dropdown-item" href="cadastroFuncionario.php">Cadastrar Funcionário</a>
+                                        <a class="dropdown-item" href="#">Editar Funcionário</a>
                                     </div>
                                 </li>
 
@@ -74,7 +71,7 @@
                             </ul>
                             <?php
                             session_start();
-                            echo "Usuario: " . $_SESSION['usuarioNome'];
+                            echo $_SESSION['usuarioNome'];
                             ?>
                             <br>
                             <a href="sair.php" class="sair">Sair</a>

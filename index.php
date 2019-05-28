@@ -29,7 +29,7 @@
       <p id="profile-name" class="profile-name-card"></p>
       <form method="POST" action="valida.php">
         <span id="reauth-email" class="reauth-email"></span>
-        <input type="text" name="email" id="nome" class="form-control" placeholder="Email" required autofocus>
+        <input type="email" name="email" id="nome" class="form-control" placeholder="Email" required autofocus>
         <input type="password" name="senha" id="senha" class="form-control" placeholder="Senha" required>
         <div id="remember" class="checkbox">
           <label>
