@@ -2,7 +2,7 @@ body, html {
     margin: 0;
     height: 100%;
     background-repeat: no-repeat;
-    background-image: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));
+    background-image: linear-gradient(rgb(104, 145, 162), rgb(50, 65, 97));
 }
 
 .topo{
@@ -13,12 +13,9 @@ body, html {
     
 }
 
-.logoTxt{
-    
-    font-family: 'Roboto', sans-serif;
-    font-size: 50px;
-    color: #444444;
-    margin: 1em auto 0;
+.ambietecImg{
+
+    margin: auto;
     max-width: 300px;
 
 }

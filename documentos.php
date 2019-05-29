@@ -65,7 +65,7 @@
                         </ul>
                         <?php
                         session_start();
-                        echo "Usuario: " . $_SESSION['usuarioNome'];
+                        echo $_SESSION['usuarioNome'];
                         ?>
                         <br>
                         <a href="sair.php" class="sair">Sair</a>
@@ -74,11 +74,9 @@
             </div>
 
             <div class="navegadorLogo">
-                <div class="logoImg">
-                    <img src="https://i.imgur.com/XGpUJgO.png" alt="imagemLogo" width=60px>
+                <div class="ambietecImg">
+                    <img src=".\Imagens\ambietecLogo.png" alt="imagemLogo" width=80px>
                 </div>
-
-
             </div>
 
         </div>

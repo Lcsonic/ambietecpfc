@@ -1,3 +1,7 @@
+<?php
+//Inicializado primeira a sessão para posteriormente recuperar valores das variáveis globais. 
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,22 +19,23 @@
 <body>
   <div class="container">
 
-
-
-    <div class="logoTxt">
-      Green Alert
-    </div>
-
-
     <div class="card card-container">
-      <div class="logoImg">
-        <img src=".\Imagens\logo-menu.png" alt="imagemLogo" width=80px>
+      <div class="ambietecImg">
+        <img src=".\Imagens\ambietecLogo.png" alt="imagemLogo" width=300px>
       </div>
       <p id="profile-name" class="profile-name-card"></p>
       <form method="POST" action="valida.php">
         <span id="reauth-email" class="reauth-email"></span>
         <input type="email" name="email" id="nome" class="form-control" placeholder="Email" required autofocus>
         <input type="password" name="senha" id="senha" class="form-control" placeholder="Senha" required>
+        <p>
+          <?php
+          //Recuperando o valor da variável global, os erro de login.
+          if (isset($_SESSION['loginErro'])) {
+            echo $_SESSION['loginErro'];
+            unset($_SESSION['loginErro']);
+          } ?>
+        </p>
         <div id="remember" class="checkbox">
           <label>
             <input type="checkbox" value="remember-me"> Lembre-se de mim
@@ -43,25 +48,6 @@
       </a>
     </div> <!-- /card-container !-->
   </div>
-
-  <p>
-    <?php
-    //Recuperando o valor da variável global, os erro de login.
-    if (isset($_SESSION['loginErro'])) {
-      echo $_SESSION['loginErro'];
-      unset($_SESSION['loginErro']);
-    } ?>
-  </p>
-  <p>
-    <?php
-    //Recuperando o valor da variável global, deslogado com sucesso.
-    if (isset($_SESSION['logindeslogado'])) {
-      echo $_SESSION['logindeslogado'];
-      unset($_SESSION['logindeslogado']);
-    }
-    ?>
-  </p>
-
 
 </body>
 

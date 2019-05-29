@@ -5,18 +5,12 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Painel de Empresas</title>
-        <!- Imports -!>
-            <link rel="stylesheet" href="./css/css-navbar.css">
-            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title>Ambietec</title>
+        <!-- Imports !-->
+        <link rel="stylesheet" href="./css/css-navbar.css">
+        <link rel="stylesheet" href="./css/css-menu.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-            <style>
-                .imgmeio {
-                    max-width: 700px;
-                    margin: auto;
-                }
-
-            </style>
     </head>
 
     <body>
@@ -80,20 +74,18 @@
                 </div>
 
                 <div class="navegadorLogo">
-                    <div class="logoImg">
-                        <img src="https://i.imgur.com/XGpUJgO.png" alt="imagemLogo" width=60px>
+                    <div class="ambietecImg">
+                        <img src=".\Imagens\ambietecLogo.png" alt="imagemLogo" width=80px>
                     </div>
-
-
                 </div>
 
             </div>
             <div class="divisoria">
                 <hr>
             </div>
-            <div class="imgmeio">
+            <div class="imgMeio">
                 <!-- imagem do centro da página !-->
-                <img src="Imagens/logo-menu.png" alt="imagemLogo" width=700px>
+                <img src="Imagens/ambietecLogoMenu.png" alt="imagemLogo" width=800px>
             </div>
         </div>
 

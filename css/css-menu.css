@@ -1,0 +1,15 @@
+.imgmeio {
+    max-width: 700px;
+    margin: auto;
+}
+
+.ambietecImg {
+    margin: 15px 30px 0px 10px;
+}
+
+.imgMeio {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 170px 0px 0px 0px;
+}
