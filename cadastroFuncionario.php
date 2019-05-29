@@ -48,10 +48,7 @@
             </div>
 
             <div class="form-group buttons">
-            <a href="menu.php">
-              <!-- Link para pagina "menu.php" !-->
-                <button type="button" class="btn btn-danger buttons">Cancelar</button>
-            </a>
+            <input type="submit" value="Cancelar" class="btn btn-danger buttons" onClick='history.go(-1)'>
             <input type="submit" value="Adicionar" class="btn btn-success buttons">
           </div>
           </div>
