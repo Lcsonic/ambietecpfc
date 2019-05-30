@@ -25,22 +25,36 @@ foreach ($_POST as $chave => $valor) {
 
 $nomeFuncionario =  $_POST['nomeFuncionario'];
 $emailFuncionario =  $_POST['emailFuncionario'];
-$senhaFuncionario = $_POST['senhaFuncionario'];
-$confSenhaFuncionario = $_POST['confSenhaFuncionario'];
+$senhaFuncionario = md5($_POST['senhaFuncionario']);
+$confSenhaFuncionario = md5($_POST['confSenhaFuncionario']);
+
+if ($_POST) {
+	$senhaFuncionario = $_POST['senhaFuncionario'];
+	$confSenhaFuncionario  = $_POST['confSenhaFuncionario'];
+	if ($senhaFuncionario == "") {
+		$mensagem = "<span class='aviso'><b>Aviso</b>: Senha não foi alterada!</span>";
+	} else if ($senhaFuncionario == $confSenhaFuncionario) {
+		$mensagem = "<span class='sucesso'><b>Sucesso</b>: As senhas são iguais: " . $senhaFuncionario . "</span>";
+		$insert_funcionario = "CALL `green_alert`.`PROC_IN_FUNCIONARIO`('$nomeFuncionario','$emailFuncionario','$senhaFuncionario',
+'$confSenhaFuncionario',2)";
+		$result_funcionario = mysqli_query($conn, $insert_funcionario);
+	} else {
+		$mensagem = "<span class='erro'><b>Erro</b>: As senhas não conferem!</span>";
+	}
+	echo "<p id='mensagem'>" . $mensagem . "</p>";
+}
 
 
 /* Teste */
 //echo "$nomeFuncionario";
 
 
-$insert_funcionario = "CALL `green_alert`.`PROC_IN_FUNCIONARIO`('$nomeFuncionario','$emailFuncionario','$senhaFuncionario',
-'$confSenhaFuncionario',2)";
+
 
 
 //echo "$insert_funcionario";
 
 //mysqli_query($conn,$result_funcionario);
-$result_funcionario = mysqli_query($conn, $insert_funcionario);
 
 
 //Validação dos campos
