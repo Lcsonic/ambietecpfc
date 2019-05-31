@@ -29,15 +29,14 @@ $senhaFuncionario = md5($_POST['senhaFuncionario']);
 $confSenhaFuncionario = md5($_POST['confSenhaFuncionario']);
 
 if ($_POST) {
-	$senhaFuncionario = $_POST['senhaFuncionario'];
-	$confSenhaFuncionario  = $_POST['confSenhaFuncionario'];
 	if ($senhaFuncionario == "") {
 		$mensagem = "<span class='aviso'><b>Aviso</b>: Senha não foi alterada!</span>";
 	} else if ($senhaFuncionario == $confSenhaFuncionario) {
-		$mensagem = "<span class='sucesso'><b>Sucesso</b>: As senhas são iguais: " . $senhaFuncionario . "</span>";
+		$mensagem = "<span class='sucesso'><b>Sucesso</b>: Cadastrado com sucesso </span>";
 		$insert_funcionario = "CALL `green_alert`.`PROC_IN_FUNCIONARIO`('$nomeFuncionario','$emailFuncionario','$senhaFuncionario',
 '$confSenhaFuncionario',2)";
 		$result_funcionario = mysqli_query($conn, $insert_funcionario);
+		header("Location: http://localhost/ambietecpfc/menu.php");
 	} else {
 		$mensagem = "<span class='erro'><b>Erro</b>: As senhas não conferem!</span>";
 	}
@@ -47,8 +46,6 @@ if ($_POST) {
 
 /* Teste */
 //echo "$nomeFuncionario";
-
-
 
 
 
