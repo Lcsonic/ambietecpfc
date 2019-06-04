@@ -56,7 +56,7 @@
 
             <div class="form-group col-md-4">
               <label for="telefoneOpc">Telefone Opcional </label>
-              <input type="text" class="form-control ttinput" name="telefoneOpc" id="telefoneOpcJS" placeholder="Telefone Opicional" required>
+              <input type="text" class="form-control ttinput" name="telefoneOpc" id="telefoneOpcJS" placeholder="Telefone Opcional">
             </div>
           </div>
 
@@ -153,10 +153,16 @@
           <div class="form-group buttons">
             <a href="empresas.php">
               <!-- Link para pagina "empresas.php" !-->
-                <button type="button" class="btn btn-danger buttons">Cancelar</button>
+              <button type="button" class="btn btn-danger buttons">Cancelar</button>
             </a>
-            <input type="submit" value="Adicionar" class="btn btn-success buttons">
+            <input id="Adicionar" type="submit" value="Adicionar" onclick="Salvo()" class="btn btn-success buttons">
           </div>
+
+          <script>
+            function Salvo() {
+              alert(document.getElementById("Adicionar").style.display);
+            }
+          </script>
 
         </div>
       </form>

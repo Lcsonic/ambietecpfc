@@ -54,17 +54,19 @@ $confSenha =  $_POST ['confSenha'];
 
 $insert_empresa = "CALL `green_alert`.`PROC_IN_EMPRESA`('$nomeEmpresa','$nomeFantasia','$cnpj'
 ,'$email','$responsavel','$telefone','$telefoneOpc','$descAtv','$endereco',
-$numero,'$bairro','$cidade','$cep','$uf','$senha','$confSenha');";
+'$numero','$bairro','$cidade','$cep','$uf','$senha','$confSenha');";
 
+echo $insert_empresa; 
 
 //mysqli_query($conexao,$result_empresa);
 $result_empresa = mysqli_query ($conn, $insert_empresa);
 
 
+
 //Validação dos campos
 
 
-/*
+
 // function verifique() //função verifica se o dado foi inserido
 // {
     if ($result_empresa = '') {
@@ -72,7 +74,7 @@ $result_empresa = mysqli_query ($conn, $insert_empresa);
     } else {
         echo 'Salvo com Sucesso!';
     };
-// } */
+// } 
 
 // Verifica se $email realmente existe e se é um email. 
 // Também verifica se não existe nenhum erro anterior

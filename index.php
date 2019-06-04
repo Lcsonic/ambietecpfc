@@ -24,30 +24,49 @@ session_start();
         <img src=".\Imagens\ambietecLogo.png" alt="imagemLogo" width=300px>
       </div>
       <p id="profile-name" class="profile-name-card"></p>
-      <form method="POST" action="valida.php">
-        <span id="reauth-email" class="reauth-email"></span>
-        <input type="email" name="email" id="nome" class="form-control" placeholder="Email" required autofocus>
-        <input type="password" name="senha" id="senha" class="form-control" placeholder="Senha" required>
-        <p>
-          <?php
-          //Recuperando o valor da variável global, os erro de login.
-          if (isset($_SESSION['loginErro'])) {
-            echo $_SESSION['loginErro'];
-            unset($_SESSION['loginErro']);
-          } ?>
-        </p>
-        <div id="remember" class="checkbox">
-          <label>
-            <input type="checkbox" value="remember-me"> Lembre-se de mim
-          </label>
-        </div>
-        <button type="submit" class="btn btn-success">Entrar</button>
-      </form> <!-- /form -->
+      <dl>
+        <dd>
+          <input type="radio" id="funcinario" value="muitobom" checked>Funcionario
+          <input type="radio" id="empresa" value="bom">Empresa
+        </dd>
+      </dl>
+      <div class="funcionario">
+        <form method="POST" action="valida.php">
+          <span id="reauth-email" class="reauth-email"></span>
+          <input type="email" name="email" id="nome" class="form-control" placeholder="Email" required autofocus>
+          <input type="password" name="senha" id="senha" class="form-control" placeholder="Senha" required>
+          <p>
+            <?php
+            //Recuperando o valor da variável global, os erro de login.
+            if (isset($_SESSION['loginErro'])) {
+              echo $_SESSION['loginErro'];
+              unset($_SESSION['loginErro']);
+            } ?>
+          </p>
+          <div id="remember" class="checkbox">
+            <label>
+              <input type="checkbox" value="remember-me"> Lembre-se de mim
+            </label>
+          </div>
+          <button type="submit" class="btn btn-success">Entrar</button>
+        </form> <!-- /form -->
+      </div>
       <a href="#" class="forgot-password">
         Esqueceu a senha?
       </a>
     </div> <!-- /card-container !-->
   </div>
+
+  <script>
+    function myFunction() {
+      var x = document.getElementById('funcionario');
+      if (x.value === true) {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+  </script>
 
 </body>
 
