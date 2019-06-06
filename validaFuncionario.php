@@ -20,11 +20,11 @@
             $_SESSION['usuarioNiveisAcessoId'] = $resultado['niveis_acesso_id'];
             $_SESSION['usuarioEmail'] = $resultado['email'];
             if($_SESSION['usuarioNiveisAcessoId'] == "1"){
+                $_SESSION['Logado'] = true; // Cria a sessão que Valida o login 
                 header("Location: menu.php");
             }elseif($_SESSION['usuarioNiveisAcessoId'] == "2"){
+                $_SESSION['Logado'] = true; // Cria a sessão que Valida o login 
                 header("Location: documentos.php");
-            }else{
-                header("Location: menu.php");
             }
         //Não foi encontrado um usuario na tabela usuário com os mesmos dados digitado no formulário
         //redireciona o usuario para a página de login

@@ -44,8 +44,8 @@ $bairro =  $_POST ['bairro'];
 $cidade =  $_POST ['cidade'];
 $cep =  $_POST ['cep'];
 $uf =  $_POST ['uf'];
-$senha =  $_POST ['senha'];
-$confSenha =  $_POST ['confSenha'];
+$senha =  md5($_POST ['senha']);
+$confSenha =  md5($_POST ['confSenha']);
 
 
 /* Teste */
@@ -54,7 +54,7 @@ $confSenha =  $_POST ['confSenha'];
 
 $insert_empresa = "CALL `green_alert`.`PROC_IN_EMPRESA`('$nomeEmpresa','$nomeFantasia','$cnpj'
 ,'$email','$responsavel','$telefone','$telefoneOpc','$descAtv','$endereco',
-'$numero','$bairro','$cidade','$cep','$uf','$senha','$confSenha');";
+'$numero','$bairro','$cidade','$cep','$uf','$senha','$confSenha',3)";
 
 echo $insert_empresa; 
 
