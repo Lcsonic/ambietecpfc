@@ -151,10 +151,7 @@
 
 
           <div class="form-group buttons">
-            <a href="empresas.php">
-              <!-- Link para pagina "empresas.php" !-->
-              <button type="button" class="btn btn-danger buttons">Cancelar</button>
-            </a>
+            <input type="submit" value="Cancelar" class="btn btn-danger buttons" onClick='history.go(-1)'>
             <input id="Adicionar" type="submit" value="Adicionar" onclick="Salvo()" class="btn btn-success buttons">
           </div>
 

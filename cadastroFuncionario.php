@@ -48,9 +48,9 @@
             </div>
 
             <div class="form-group buttons">
-            <input type="submit" value="Cancelar" class="btn btn-danger buttons" onClick='history.go(-1)'>
-            <input type="submit" value="Adicionar" class="btn btn-success buttons">
-          </div>
+              <input type="submit" value="Cancelar" class="btn btn-danger buttons" onClick='history.go(-1)'>
+              <input type="submit" value="Adicionar" class="btn btn-success buttons">
+            </div>
           </div>
         </div>
       </form>
