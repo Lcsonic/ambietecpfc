@@ -116,7 +116,7 @@
                                 <th>CNPJ</th>
                                 <th>Telefone</th>
                                 <th>E-mail</th>
-                                <th></th>
+                                <th>Ações</th>
                                 <!-- <th>Ações</th> -->
                             </tr>
                         </thead>
@@ -128,13 +128,8 @@
                                     <td><?php echo $dado['telefone_empresa']; ?></td>
                                     <td><?php echo $dado['email_empresa']; ?></td>
                                     <td>
-                                        <!--
-                                                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal<?php echo $dado['cnpj_empresa']; ?>">Visualizar</button>
-                                                     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" data-whatever="<?php echo $dado['id_empresa']; ?>">Editar</button>
-                                                     <button type="button" class="btn btn-xs btn-danger">Apagar</button>
-                                                  -->
-
-                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-xl" id="<?php echo $dado['id_empresa']; ?>" >Extra large modal</button>
+                                        <a href="visualizarEmp.php?id=<?php echo $dado['id_empresa']; ?>">Link</a>
+                                        <button type="button" class="btn btn-primary" >Visualizar</button>
                                         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" data-whatever="<?php echo $dado['id_empresa']; ?>">Editar</button>
                                         <button type="button" class="btn btn-xs btn-danger">Apagar</button>
                                     </td>
@@ -143,7 +138,7 @@
                                 <!-- Extra large modal -->
 
 
-                                <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                                <div id="visualizarEmpresaModal" class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
                                     <div class="modal-dialog modal-xl">
                                         <div class="modal-content">
                                             <div class="modal-header">
@@ -153,155 +148,41 @@
                                                 </button>
                                             </div>
                                             <div class="modal-body">
-                                                
-                                                <?php echo $dado['nomeFantasia_empresa']; ?>
+
+
 
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
-                                <!--INICIO MODAL-->
-                                <div class="modal fade" id="myModal<?php echo $dado['cnpj_empresa']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h4 class="modal-title" text=center id="myModalLabel"><?php echo $dado['nomeFantasia_empresa']; ?></h4>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                            </div>
-                                            <div class="modal-body">
-
-                                                <div class="modal-all">
-
-                                                    <div class="modal-empresa">
-
-                                                        <div class="empTxt">
-                                                            Descrição
-                                                        </div>
-
-                                                        <div class="infEmpresa">
-
-                                                            <div class="divFull">
-
-                                                                <div class="rzSocial">
-
-                                                                    <div class="rzSocialTxt">
-                                                                        Razão Social:
-                                                                    </div>
-
-                                                                    <div class="rzSocialPh">
-                                                                        <?php echo $dado['razaoSocial_empresa']; ?>
-
-                                                                    </div>
-
-                                                                </div>
-
-                                                            </div>
-
-                                                            <div class="divFull2">
-
-                                                                A
-
-                                                            </div>
-
-                                                        </div>
-
-                                                        <hr>
-
-                                                        <div class="empTxt">
-                                                            Contato
-                                                        </div>
-
-                                                        <div class="infEmpresa">
-
-                                                            <div class="divFull">
-
-                                                                a
-
-                                                            </div>
-
-                                                            <div class="divFull2">
-
-                                                                A
-
-                                                            </div>
-
-                                                        </div>
-
-                                                        <hr>
-
-                                                        <div class="empTxt">
-                                                            Endereço
-                                                        </div>
-
-                                                        <div class="infEmpresa">
-
-                                                            <div class="divFull">
-
-                                                                a
-
-                                                            </div>
-
-                                                            <div class="divFull2">
-
-                                                                A
-
-                                                            </div>
-
-                                                        </div>
-
-                                                        <hr>
-
-                                                    </div>
+                                <script>
+                                    $(document.ready(function() {
+                                                $(document).on('click', '.view_data', function() {
+                                                    var user_id = $(this).attr("id");
+                                                    //alert(user_id);
+                                                    //Verificar se "user_id" ta recebendo o id
+                                                    if (user_id !== '') {
+                                                        var dados = {
+                                                            user_id: user_id
+                                                        };
+                                                        $.post('visualizarEmp.php', dados, function(retorna) {
+                                                            $('#visualizarEmpresaModal').modal('show');
+                                                        });
+                                                    }
+                                                });
+                                            });
+                                    )
+                                </script>
 
 
-                                                </div>
-                                                <p><?php echo $dado['nomeFantasia_empresa']; ?></p>
-                                                <p><?php echo $dado['cnpj_empresa']; ?></p>
-                                                <p><?php echo $dado['email_empresa']; ?></p>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--FIM MODAL-->
                             <?php }  ?>
                         </tbody>
 
                     </table>
                 </div>
 
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <h4 class="modal-title" id="exampleModalLabel">New message</h4>
-                            </div>
-                            <div class="modal-body">
-                                <form>
-                                    <div class="form-group">
-                                        <label for="recipient-name" class="control-label">Recipient:</label>
-                                        <input type="text" class="form-control" id="recipient-name">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="message-text" class="control-label">Message:</label>
-                                        <textarea class="form-control" id="message-text"></textarea>
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Send message</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-
-
-
+                <!--BOTÃO ADICIONAR EMPRESA-->
                 <div class="btnCadastro">
                     <a href="cadastroEmpresa.php">
                         <!- Link para pagina "documentos.php" -!>
@@ -313,7 +194,7 @@
 
         </div>
 
-        </div>
+
 
     </body>
 
@@ -339,4 +220,9 @@
                 }
             });
         });
+    </script>
+
+    <script>
+
+
     </script>

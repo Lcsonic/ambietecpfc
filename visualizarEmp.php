@@ -1,27 +1,44 @@
 <?php
 include("classes/conexao.php");
 
-$result_emp = "SELECT * FROM cliente_empresa WHERE id_empresa = '45';";
-$resultado_emp = mysqli_query ($conexao, $result_emp);
-$linha_emp = mysqli_fetch_assoc($resultado_emp);
+
+$id = $_GET['id'];
+echo $id;
+
+//$consulta = "SELECT * FROM cliente_empresa WHERE nomeFantasia_empresa='$nf'";
+$consulta = "SELECT * FROM cliente_empresa WHERE id_empresa ='$id' ";
+$result_consulta =  mysqli_query($conexao, $consulta);
+
+
 
 ?>
 
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-<body>
-    
-    <form method="POST" action="proc_edit_empresa.pgp">
-        <label>Nome: </label>
-        <input type="text" name="nome" placeholder="Nothing" value="<?php echo $linha_emp['nomeFantasia_empresa']?>" >
 
-    </form>
+<body>
+
+
+    <?php while ($dado = $result_consulta->fetch_array()) { ?>
+
+        <div>
+            <?php echo $dado['nomeFantasia_empresa']; ?>
+        </div>
+
+        <?php echo $dado['cnpj_empresa']; ?>
+        <?php echo $dado['telefone_empresa']; ?>
+        <?php echo $dado['email_empresa']; ?>
+
+
+    <?php }  ?>
 
 </body>
+
 </html>
