@@ -43,7 +43,7 @@ hr{
 }
 
 .navegadorLogo{
-    
+    /*Nada por aqui por enquanto*/
 }
 
 .collapse{
@@ -68,7 +68,7 @@ hr{
 }
 
 .btnTopo{
-    
+    /*Nada por aqui por enquanto*/
 }
 
 .btn1{
@@ -135,7 +135,7 @@ hr{
 }
 
 .descrImg{
-
+    /*Nada por aqui por enquanto*/
 }
 
 .descrTxt{
@@ -204,6 +204,14 @@ hr{
 }
 
 .crudListar{
-    
+    /*Nada por aqui por enquanto*/
 }
 
+
+.tableEmpresas{
+    margin: 20px 100px 20px 100px;
+}
+
+.listarDT{
+    margin: 20px 100px 0px 100px
+}

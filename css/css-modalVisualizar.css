@@ -1,0 +1,33 @@
+.modal-empresa{
+
+}
+
+.empTxt{
+   font-size: 20px;
+}
+
+.infEmpresa{
+
+}
+
+.divFull{
+    display:flex;
+    margin: 10px 0px 0px 0px;
+}
+
+.divFull2{
+    display: flex;
+    margin: 10px 0px 0px 0px;
+}
+
+.rzSocial{
+    display:flex;
+}
+
+.rzSocialTxt{
+
+}
+
+.rzSocialPh{
+    margin: 0px 0px 0px 10px;
+}
