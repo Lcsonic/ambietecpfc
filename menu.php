@@ -39,7 +39,7 @@ if ($_SESSION['Logado'] = true && $_SESSION['usuarioNiveisAcessoId'] != "1") { /
 
 
             <div class="nvgdBar">
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <nav class="navbar navbar-expand-lg btn-primary bg-light">
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
