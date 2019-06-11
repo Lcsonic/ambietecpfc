@@ -51,8 +51,8 @@ session_start();
       <div id="divFormEmpresa" class="empresa">
         <form method="POST" action="validaEmpresa.php">
           <span id="reauth-email" class="reauth-email"></span>
-          <input type="email" name="email_empresa" id="nome" class="form-control" placeholder="EmailTeste" required autofocus>
-          <input type="password" name="senha_empresa" id="senha" class="form-control" placeholder="SenhaTeste" required>
+          <input type="email" name="email_empresa" id="nome" class="form-control" placeholder="Email" required autofocus>
+          <input type="password" name="senha_empresa" id="senha" class="form-control" placeholder="Senha" required>
           <p>
             <?php
             //Recuperando o valor da variável global, os erro de login.

@@ -49,7 +49,7 @@ if ($_SESSION['Logado'] = true && $_SESSION['usuarioNiveisAcessoId'] == "3") { /
                         <ul class="navbar-nav mr-auto">
 
                             <li class="nav-item">
-                                <a class="nav-link" href="menu.php">Menu Principal</a>
+                                <a class="nav-link" href="menu.php">Ambietec</a>
                             </li>
 
                             <li class="nav-item dropdown">
@@ -77,9 +77,36 @@ if ($_SESSION['Logado'] = true && $_SESSION['usuarioNiveisAcessoId'] == "3") { /
                                     Funcionário
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="cadastroFuncionario.php">Cadastrar Funcionário</a>
-                                    <a class="dropdown-item" href="#">Editar Funcionário</a>
+                                    <a class="dropdown-item" href="cadastroFuncionario.php">Cadastrar</a>
+                                    <a class="dropdown-item" href="#">Editar</a>
                                 </div>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Órgão Lic.
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="cadastroFuncionario.php">Cadastrar</a>
+                                    <a class="dropdown-item" href="#">Editar</a>
+                                </div>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Documentos
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                                    <a class="dropdown-item" href="">Cadastrar</a>
+                                    <a class="dropdown-item" href="">Listar</a>
+                                </div>
+
+
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="menu.php">Relatório</a>
                             </li>
 
 
