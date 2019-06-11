@@ -1,28 +1,28 @@
 <?php
-include ("./../conexao.php");
+include("./../conexao.php");
 
 $erro = false;
 
 // Verifica se o POST tem algum valor
-if ( !isset( $_POST ) || empty( $_POST ) ) {
+if (!isset($_POST) || empty($_POST)) {
 	$erro = 'Nada foi postado.';
 }
 
 // Cria as variáveis dinamicamente
-foreach ( $_POST as $chave => $valor ) {
+foreach ($_POST as $chave => $valor) {
 	// Remove todas as tags HTML
 	// Remove os espaços em branco do valor
-	$$chave = trim( strip_tags( $valor ) );
-	
+	$$chave = trim(strip_tags($valor));
+
 	// Verifica se tem algum valor nulo
-	if ( empty ( $valor ) ) {
+	if (empty($valor)) {
 		$erro = 'Existem campos em branco.';
 	}
 }
 
 // Verifica se $idade realmente existe e se é um número. 
 // Também verifica se não existe nenhum erro anterior
-if ( ( ! isset( $cnpjJS) || ! is_numeric( $idade ) ) && !$erro ) {
+if ((!isset($cnpjJS) || !is_numeric($idade)) && !$erro) {
 	$erro = 'A idade deve ser um valor número.';
 }
 
@@ -30,36 +30,51 @@ if ( ( ! isset( $cnpjJS) || ! is_numeric( $idade ) ) && !$erro ) {
 
 
 
-$nomeEmpresa =  $_POST ['nomeEmpresa'];
-$nomeFantasia =  $_POST ['nomeFantasia'];
-$cnpj = $_POST ['cnpj'];
-$email =  $_POST ['email'];
-$responsavel=  $_POST ['responsavel'];
-$telefone =  $_POST ['telefone'];
-$telefoneOpc =  $_POST ['telefoneOpc'];
-$descAtv =  $_POST ['descAtv'];
-$endereco =  $_POST ['endereco'];
-$numero =  $_POST ['numero'];
-$bairro =  $_POST ['bairro'];
-$cidade =  $_POST ['cidade'];
-$cep =  $_POST ['cep'];
-$uf =  $_POST ['uf'];
-$senha =  md5($_POST ['senha']);
-$confSenha =  md5($_POST ['confSenha']);
+$nomeEmpresa =  $_POST['nomeEmpresa'];
+$nomeFantasia =  $_POST['nomeFantasia'];
+$cnpj = $_POST['cnpj'];
+$email =  $_POST['email'];
+$responsavel =  $_POST['responsavel'];
+$telefone =  $_POST['telefone'];
+$telefoneOpc =  $_POST['telefoneOpc'];
+$descAtv =  $_POST['descAtv'];
+$endereco =  $_POST['endereco'];
+$numero =  $_POST['numero'];
+$bairro =  $_POST['bairro'];
+$cidade =  $_POST['cidade'];
+$cep =  $_POST['cep'];
+$uf =  $_POST['uf'];
+$senha =  md5($_POST['senha']);
+$confSenha =  md5($_POST['confSenha']);
 
 
 /* Teste */
 //echo "$cnpj, $nomeEmpresa, $nomeFantasia ,$endereco ,$bairro, $cidade ,$cep ,$uf ,$telefone";
 
 
-$insert_empresa = "CALL `green_alert`.`PROC_IN_EMPRESA`('$nomeEmpresa','$nomeFantasia','$cnpj'
+if ($_POST) {
+	if ($senha == "") {
+		$mensagem = "<span class='aviso'><b>Aviso</b>: Senha não foi alterada!</span>";
+	} else if ($senha == $confSenha) {
+		$mensagem = "<span class='sucesso'><b>Sucesso</b>: Cadastrado com sucesso </span>";
+		$insert_empresa = "CALL `green_alert`.`PROC_IN_EMPRESA`('$nomeEmpresa','$nomeFantasia','$cnpj'
 ,'$email','$responsavel','$telefone','$telefoneOpc','$descAtv','$endereco',
 '$numero','$bairro','$cidade','$cep','$uf','$senha','$confSenha',3)";
+		$result_empresa = mysqli_query($conn, $insert_empresa);
+		header("Location: http://localhost/ambietecpfc/menu.php");
+	} else {
+		$insert_empresa = "CALL `green_alert`.`PROC_IN_EMPRESA`('$nomeEmpresa','$nomeFantasia','$cnpj'
+		,'$email','$responsavel','$telefone','$telefoneOpc','$descAtv','$endereco',
+		'$numero','$bairro','$cidade','$cep','$uf','$senha','$confSenha',3)";
+		$mensagem = "<span class='erro'><b>Erro</b>: As senhas não conferem!</span>";
+	}
+	echo "<p id='mensagem'>" . $mensagem . "</p>";
+}
 
-echo $insert_empresa; 
+//echo $insert_empresa; 
 
 //mysqli_query($conexao,$result_empresa);
-$result_empresa = mysqli_query ($conn, $insert_empresa);
+
 
 
 
@@ -69,19 +84,16 @@ $result_empresa = mysqli_query ($conn, $insert_empresa);
 
 // function verifique() //função verifica se o dado foi inserido
 // {
-    if ($result_empresa = '') {
-        echo 'Erro ao salvar!';
-    } else {
-        echo 'Salvo com Sucesso!';
-    };
-// } 
+/* if ($result_empresa = '') {
+	echo 'Erro ao salvar!';
+} else {
+	echo 'Salvo com Sucesso!';
+};
+// } */
 
 // Verifica se $email realmente existe e se é um email. 
 // Também verifica se não existe nenhum erro anterior
-if ( ( ! isset( $email ) || ! filter_var( $email, FILTER_VALIDATE_EMAIL ) ) && !$erro ) {
-    $erro = 'Envie um email válido.';
-    echo $erro;
+if ((!isset($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) && !$erro) {
+	$erro = 'Envie um email válido.';
+	echo $erro;
 }
-
-?>
-

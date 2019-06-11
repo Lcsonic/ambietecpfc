@@ -67,8 +67,15 @@ if ($_SESSION['Logado'] = true && $_SESSION['usuarioNiveisAcessoId'] == "3") { /
 
             <div class="form-group buttons">
               <input type="submit" value="Cancelar" class="btn btn-danger buttons" onClick='history.go(-1)'>
-              <input type="submit" value="Adicionar" class="btn btn-success buttons">
+              <input type="submit" id="Adicionar"value="Adicionar" class="btn btn-success buttons" onclick="Salvo()">
             </div>
+
+            <script>
+            function Salvo() {
+              alert(document.getElementById("Adicionar").style.display='Cadastrado com sucesso');
+            }
+          </script>
+          
           </div>
         </div>
       </form>

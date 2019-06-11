@@ -175,7 +175,7 @@ if ($_SESSION['Logado'] = true && $_SESSION['usuarioNiveisAcessoId'] == "3") { /
 
           <script>
             function Salvo() {
-              alert(document.getElementById("Adicionar").style.display);
+              alert(document.getElementById("Adicionar").style.display='Cadastrado com sucesso');;
             }
           </script>
 

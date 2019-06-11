@@ -3,7 +3,7 @@
 //Importa a validação da sessão para evitar acesso via URL
 include('validaPagina.php');
 //verifica se a pagina pertence ao nivel do usuario logado 
-if ($_SESSION['Logado'] = true && $_SESSION['usuarioNiveisAcessoId'] != "1") { // comparação para verificar o nivel do acesso
+if ($_SESSION['Logado'] = true && $_SESSION['usuarioNiveisAcessoId'] == "3") { // comparação para verificar o nivel do acesso
     session_start();
     unset($_SESSION['usuarioId'],
     $_SESSION['usuarioNome'],
@@ -39,14 +39,14 @@ if ($_SESSION['Logado'] = true && $_SESSION['usuarioNiveisAcessoId'] != "1") { /
 
 
             <div class="nvgdBar">
-                <nav class="navbar navbar-expand-lg btn-primary bg-light">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
                         <ul class="navbar-nav mr-auto">
 
                             <li class="nav-item">
-                                <a class="nav-link" href="menu.php">Menu Principal</a>
+                                <a class="nav-link" href="menu.php">Ambietec</a>
                             </li>
 
                             <li class="nav-item dropdown">
@@ -74,9 +74,36 @@ if ($_SESSION['Logado'] = true && $_SESSION['usuarioNiveisAcessoId'] != "1") { /
                                     Funcionário
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="cadastroFuncionario.php">Cadastrar Funcionário</a>
-                                    <a class="dropdown-item" href="#">Editar Funcionário</a>
+                                    <a class="dropdown-item" href="cadastroFuncionario.php">Cadastrar</a>
+                                    <a class="dropdown-item" href="#">Editar</a>
                                 </div>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Órgão Licenciador
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="cadastroFuncionario.php">Cadastrar</a>
+                                    <a class="dropdown-item" href="#">Editar</a>
+                                </div>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Documentos
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    
+                                    <a class="dropdown-item" href="">Cadastrar</a>
+                                    <a class="dropdown-item" href="">Listar</a>
+                                </div>
+
+                                
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="menu.php">Relatório</a>
                             </li>
 
 
