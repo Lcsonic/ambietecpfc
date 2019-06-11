@@ -13,7 +13,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Painel de Empresas</title>
+        <title>Empresas</title>
         <!-- Imports -->
         <link rel="stylesheet" href="./css/css-empresas.css">
         <link rel="stylesheet" href="./css/css-modalVisualizar.css">
@@ -128,9 +128,11 @@
                                     <td><?php echo $dado['telefone_empresa']; ?></td>
                                     <td><?php echo $dado['email_empresa']; ?></td>
                                     <td>
+                                        <div class="buttonsA">
                                         <a href="visualizarEmp.php?id=<?php echo $dado['id_empresa']; ?>" class="btn btn-primary">View</a>
-                                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" data-whatever="<?php echo $dado['id_empresa']; ?>">Editar</button>
-                                        <button type="button" class="btn btn-xs btn-danger">Apagar</button>
+                                        <a href="editarEmpresa.php?id=<?php echo $dado['id_empresa']; ?>" class="btn btn-success">Editar</a>
+                                        <a href="./classes/Classes-GA/apagaEmp.php?id=<?php echo $dado['id_empresa']; ?>" class="btn btn-xs btn-danger">Apagar</a>
+                                        </div>
                                     </td>
                                 </tr>
 
