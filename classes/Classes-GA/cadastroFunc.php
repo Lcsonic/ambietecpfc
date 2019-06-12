@@ -22,9 +22,24 @@ foreach ($_POST as $chave => $valor) {
 
 // Não mexer
 
-
+$cpf =  $_POST['cpf'];
 $nomeFuncionario =  $_POST['nomeFuncionario'];
+$rg =  $_POST['rg'];
+$dataNascimento =  $_POST['dataNascimento'];
+$cnh =  $_POST['cnh'];
+$categoria =  $_POST['categoria'];
+$ctps =  $_POST['ctps'];
+$nomeMae =  $_POST['nomeMae'];
 $emailFuncionario =  $_POST['emailFuncionario'];
+$escolaridade =  $_POST['escolaridade'];
+$telefone=  $_POST['telefone'];
+$telefoneOpc =  $_POST['telefoneOpc'];
+$endereco =  $_POST['endereco'];
+$numero =  $_POST['numero'];
+$bairro =  $_POST['bairro'];
+$cidade =  $_POST['cidade'];
+$cep =  $_POST['cep'];
+$uf =  $_POST['uf'];
 $senhaFuncionario = md5($_POST['senhaFuncionario']);
 $confSenhaFuncionario = md5($_POST['confSenhaFuncionario']);
 
@@ -33,8 +48,9 @@ if ($_POST) {
 		$mensagem = "<span class='aviso'><b>Aviso</b>: Senha não foi alterada!</span>";
 	} else if ($senhaFuncionario == $confSenhaFuncionario) {
 		$mensagem = "<span class='sucesso'><b>Sucesso</b>: Cadastrado com sucesso </span>";
-		$insert_funcionario = "CALL `green_alert`.`PROC_IN_FUNCIONARIO`('$nomeFuncionario','$emailFuncionario','$senhaFuncionario',
-'$confSenhaFuncionario',2)";
+		$insert_funcionario = "CALL `green_alert`.`PROC_IN_FUNCIONARIO`('$cpf','$nomeFuncionario','$rg','$dataNascimento',
+		'$cnh','$categoria','$ctps','$nomeMae','$emailFuncionario','$escolaridade','$telefone','$telefoneOpc','$endereco',
+		'$numero','$bairro','$cidade','$cep','$uf','$senhaFuncionario','$confSenhaFuncionario')";
 		$result_funcionario = mysqli_query($conn, $insert_funcionario);
 		header("Location: ./../../menu.php");
 	} else {
