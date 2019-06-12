@@ -210,7 +210,7 @@ $resultado_empresa = mysqli_query($conn, $result_empresa);
             <div class="btnCadastro">
                 <a href="cadastroEmpresa.php">
                     <!-- Link para pagina "documentos.php" !-->
-                    <button type="button" class="btn btn-success">Adicionar Empresa</button>
+                    <button type="button" class="btn btn-primary">Adicionar Empresa</button>
                 </a>
             </div>
 
