@@ -1,10 +1,8 @@
-CREATE DATABASE  IF NOT EXISTS `green_alert` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `green_alert`;
--- MySQL dump 10.16  Distrib 10.1.39-MariaDB, for Win64 (AMD64)
+-- MySQL dump 10.16  Distrib 10.1.38-MariaDB, for Win64 (AMD64)
 --
 -- Host: 127.0.0.1    Database: green_alert
 -- ------------------------------------------------------
--- Server version	10.1.39-MariaDB
+-- Server version	10.1.38-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -298,10 +296,6 @@ INSERT INTO `usuarios` VALUES (1,'Matheus Maia','Matheus@Maia.com','202cb962ac59
 UNLOCK TABLES;
 
 --
--- Dumping events for database 'green_alert'
---
-
---
 -- Dumping routines for database 'green_alert'
 --
 /*!50003 DROP PROCEDURE IF EXISTS `PROC_IN_EMPRESA` */;
@@ -449,6 +443,28 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `PROC_UP_EMPRESA` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `PROC_UP_EMPRESA`(IN `razaoSocial_empresa` VARCHAR(255), IN `nomeFantasia_empresa` VARCHAR(255), IN `cnpj_empresa` VARCHAR(255), IN `email_empresa` VARCHAR(255), IN `responsavel_empresa` VARCHAR(255), IN `telefone_empresa` VARCHAR(255), IN `telefoneOpc_empresa` VARCHAR(255), IN `descricao_empresa` VARCHAR(255), IN `rua_endereco` VARCHAR(255), IN `numero_endereco` INT(5), IN `bairro_endereco` VARCHAR(255), IN `cidade_endereco` VARCHAR(255), IN `cep_endereco` VARCHAR(255), IN `uf_endereco` VARCHAR(255))
+BEGIN
+UPDATE cliente_empresa SET nomeEmpresa_empresa='$nomeEmpresa', nomeFantasia_empresa='$nomeFantasia', cnpj_empresa='$cnpj', 
+email_empresa='$email', responsavel_empresa='$responsavel', telefone_empresa='$telefone', telefoneOpc_empresa='$telefoneOpc', 
+descricao_empresa='$descAtv', rua_endereco='$endereco', numero_endereco='$numero', bairro_endereco='$bairro', cidade_endereco='$cidade',
+cep_endereco='$cep', uf_endereco='$uf' WHERE id_empresa ='$id';
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -459,4 +475,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-06-11 19:04:59
+-- Dump completed on 2019-06-12  1:40:29
