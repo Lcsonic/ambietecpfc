@@ -196,7 +196,7 @@ $resultado_empresa = mysqli_query($conn, $result_empresa);
                                     <div class="buttonsA">
                                         <a href="visualizarEmp.php?id=<?php echo $dado['id_empresa']; ?>" class="btn btn-primary">View</a>
                                         <a href="editarEmpresa.php?id=<?php echo $dado['id_empresa']; ?>" class="btn btn-success">Editar</a>
-                                        <a href="./classes/Classes-GA/apagaEmp.php?id=<?php echo $dado['id_empresa']; ?>" class="btn btn-xs btn-danger">Apagar</a>
+                                        <a href="./classes/Classes-GA/apagarEmp.php?id=<?php echo $dado['id_empresa']; ?>" class="btn btn-xs btn-danger">Apagar</a>
                                     </div>
                                 </td>
                             </tr>
