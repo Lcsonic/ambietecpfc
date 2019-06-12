@@ -39,7 +39,6 @@ $resultado_empresa = mysqli_query($conn, $result_empresa);
     <!-- Imports -->
     <link rel="stylesheet" href="./css/css-empresas.css"> <!-- css da página de listar empresas !-->
     <link rel="stylesheet" href="./css/css-navbar.css"> <!-- css do navbar de todas as páginas !-->
-
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
@@ -159,50 +158,63 @@ $resultado_empresa = mysqli_query($conn, $result_empresa);
             <hr>
         </div>
 
+        <div class="areaBranca">
 
-        <div class="listarDT">
-            <table id="listar-empresa" class="table table-striped table-bordered" style="width:100%">
-                <!--Cabeçalho-->
-                <thead>
-                    <tr>
-                        <th>Empresa</th>
-                        <th>CNPJ</th>
-                        <th>Telefone</th>
-                        <th>E-mail</th>
-                        <th>Ações</th>
-                        <!-- <th>Ações</th> -->
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php while ($dado = $resultado_empresa->fetch_array()) { ?>
+            <div class="descrAba">
+
+                <div class="descrImg">
+                    <img src="https://cdn0.iconfinder.com/data/icons/lined-global-business/48/a-14-512.png" alt="" width=47px>
+                </div>
+
+                <div class="descrTxt">
+                    Painel de empresas
+                </div>
+
+            </div>
+
+            <div class="listarDT">
+                <table id="listar-empresa" class="table table-striped table-bordered" style="width:100%">
+                    <!--Cabeçalho-->
+                    <thead>
                         <tr>
-                            <td><?php echo $dado['nomeFantasia_empresa']; ?></td>
-                            <td><?php echo $dado['cnpj_empresa']; ?></td>
-                            <td><?php echo $dado['telefone_empresa']; ?></td>
-                            <td><?php echo $dado['email_empresa']; ?></td>
-                            <td>
-                                <div class="buttonsA">
-                                    <a href="visualizarEmp.php?id=<?php echo $dado['id_empresa']; ?>" class="btn btn-primary">View</a>
-                                    <a href="editarEmpresa.php?id=<?php echo $dado['id_empresa']; ?>" class="btn btn-success">Editar</a>
-                                    <a href="./classes/Classes-GA/apagarEmp.php?id=<?php echo $dado['id_empresa']; ?>" class="btn btn-xs btn-danger">Apagar</a>
-                                </div>
-                            </td>
+                            <th>Empresa</th>
+                            <th>CNPJ</th>
+                            <th>Telefone</th>
+                            <th>E-mail</th>
+                            <th>Ações</th>
+                            <!-- <th>Ações</th> -->
                         </tr>
+                    </thead>
+                    <tbody>
+                        <?php while ($dado = $resultado_empresa->fetch_array()) { ?>
+                            <tr>
+                                <td><?php echo $dado['nomeFantasia_empresa']; ?></td>
+                                <td><?php echo $dado['cnpj_empresa']; ?></td>
+                                <td><?php echo $dado['telefone_empresa']; ?></td>
+                                <td><?php echo $dado['email_empresa']; ?></td>
+                                <td>
+                                    <div class="buttonsA">
+                                        <a href="visualizarEmp.php?id=<?php echo $dado['id_empresa']; ?>" class="btn btn-primary">View</a>
+                                        <a href="editarEmpresa.php?id=<?php echo $dado['id_empresa']; ?>" class="btn btn-success">Editar</a>
+                                        <a href="./classes/Classes-GA/apagaEmp.php?id=<?php echo $dado['id_empresa']; ?>" class="btn btn-xs btn-danger">Apagar</a>
+                                    </div>
+                                </td>
+                            </tr>
 
-                    <?php }  ?>
-                </tbody>
+                        <?php }  ?>
+                    </tbody>
 
-            </table>
+                </table>
+            </div>
+
+            <div class="btnCadastro">
+                <a href="cadastroEmpresa.php">
+                    <!-- Link para pagina "documentos.php" !-->
+                    <button type="button" class="btn btn-success">Adicionar Empresa</button>
+                </a>
+            </div>
+
         </div>
-
-        <div class="btnCadastro">
-            <a href="cadastroEmpresa.php">
-                <!-- Link para pagina "documentos.php" !-->
-                <button type="button" class="btn btn-success">Adicionar Empresa</button>
-            </a>
-        </div>
-
-    </div>
 
     </div>
 
@@ -227,6 +239,7 @@ $resultado_empresa = mysqli_query($conn, $result_empresa);
 <script>
     $(document).ready(function() {
         $('#listar-empresa').DataTable({
+            "lengthMenu": [5, 10, 15, 20, 25],
             "language": {
                 "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/Portuguese-Brasil.json"
             }
@@ -234,6 +247,3 @@ $resultado_empresa = mysqli_query($conn, $result_empresa);
     });
 </script>
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
