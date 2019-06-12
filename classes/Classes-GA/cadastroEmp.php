@@ -61,11 +61,8 @@ if ($_POST) {
 ,'$email','$responsavel','$telefone','$telefoneOpc','$descAtv','$endereco',
 '$numero','$bairro','$cidade','$cep','$uf','$senha','$confSenha',3)";
 		$result_empresa = mysqli_query($conn, $insert_empresa);
-		header("Location: http://localhost/ambietecpfc/menu.php");
+		header("Location: ./../../menu.php");
 	} else {
-		$insert_empresa = "CALL `green_alert`.`PROC_IN_EMPRESA`('$nomeEmpresa','$nomeFantasia','$cnpj'
-		,'$email','$responsavel','$telefone','$telefoneOpc','$descAtv','$endereco',
-		'$numero','$bairro','$cidade','$cep','$uf','$senha','$confSenha',3)";
 		$mensagem = "<span class='erro'><b>Erro</b>: As senhas não conferem!</span>";
 	}
 	echo "<p id='mensagem'>" . $mensagem . "</p>";

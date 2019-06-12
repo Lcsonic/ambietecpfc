@@ -36,7 +36,7 @@ if ($_POST) {
 		$insert_funcionario = "CALL `green_alert`.`PROC_IN_FUNCIONARIO`('$nomeFuncionario','$emailFuncionario','$senhaFuncionario',
 '$confSenhaFuncionario',2)";
 		$result_funcionario = mysqli_query($conn, $insert_funcionario);
-		header("Location: http://localhost/ambietecpfc/menu.php");
+		header("Location: ./../../menu.php");
 	} else {
 		$mensagem = "<span class='erro'><b>Erro</b>: As senhas não conferem!</span>";
 	}
