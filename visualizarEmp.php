@@ -132,7 +132,8 @@ $result_consulta =  mysqli_query($conn, $consulta);
                                     <input type="text" class="form-control" name="cep" id="cepJS" value="<?php echo $dado['uf_endereco']; ?>" disabled="disabled">
                                 </div>
                             </div>
-                            
+
+                            <a class="btn btn-danger buttons" href="empresas.php">Voltar</a>
                         </div>
                     </form>
                 </div>
