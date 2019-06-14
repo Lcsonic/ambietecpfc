@@ -76,7 +76,7 @@ if ($_SESSION['Logado'] = true && $_SESSION['usuarioNiveisAcessoId'] == "3") { /
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="cadastroFuncionario.php">Cadastrar</a>
-                                    <a class="dropdown-item" href="#">Editar</a>
+                                    <a class="dropdown-item" href="funcionario.php">Editar</a>
                                 </div>
                             </li>
 
@@ -85,7 +85,7 @@ if ($_SESSION['Logado'] = true && $_SESSION['usuarioNiveisAcessoId'] == "3") { /
                                     Órgão Lic.
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="cadastroFuncionario.php">Cadastrar</a>
+                                    <a class="dropdown-item" href="#">Cadastrar</a>
                                     <a class="dropdown-item" href="#">Editar</a>
                                 </div>
                             </li>

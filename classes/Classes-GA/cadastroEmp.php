@@ -52,21 +52,13 @@ $confSenha =  md5($_POST['confSenha']);
 //echo "$cnpj, $nomeEmpresa, $nomeFantasia ,$endereco ,$bairro, $cidade ,$cep ,$uf ,$telefone";
 
 
-if ($_POST) {
-	if ($senha == "") {
-		$mensagem = "<span class='aviso'><b>Aviso</b>: Senha não foi alterada!</span>";
-	} else if ($senha == $confSenha) {
-		$mensagem = "<span class='sucesso'><b>Sucesso</b>: Cadastrado com sucesso </span>";
-		$insert_empresa = "CALL `green_alert`.`PROC_IN_EMPRESA`('$nomeEmpresa','$nomeFantasia','$cnpj'
+
+$insert_empresa = "CALL `green_alert`.`PROC_IN_EMPRESA`('$nomeEmpresa','$nomeFantasia','$cnpj'
 ,'$email','$responsavel','$telefone','$telefoneOpc','$descAtv','$endereco',
 '$numero','$bairro','$cidade','$cep','$uf','$senha','$confSenha',3)";
-		$result_empresa = mysqli_query($conn, $insert_empresa);
-		header("Location: ./../../menu.php");
-	} else {
-		$mensagem = "<span class='erro'><b>Erro</b>: As senhas não conferem!</span>";
-	}
-	echo "<p id='mensagem'>" . $mensagem . "</p>";
-}
+$result_empresa = mysqli_query($conn, $insert_empresa);
+header("Location: ./../../menu.php");
+
 
 //echo $insert_empresa; 
 

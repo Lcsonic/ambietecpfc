@@ -116,15 +116,18 @@ if ($_SESSION['Logado'] = true && $_SESSION['usuarioNiveisAcessoId'] == "3") { /
             </div>
           </div>
 
-
           <div class="form-row df">
 
-            <div class="form-group col-md-3">
+            <div class="form-group col-md-5">
               <label for="Endereco">Endereço </label><span class="asterisco-ver">*</span>
               <input type="text" class="form-control" name="endereco" id="enderecoJS" placeholder="Endereço" required>
             </div>
+          </div>
 
-            <div class="form-group col-md-1">
+
+          <div class="form-row df">
+
+            <div class="form-group col-md-2">
               <label for="numero">Número </label><span class="asterisco-ver">*</span>
               <input type="text" class="form-control" name="numero" id="numeroJS" placeholder="Número" required>
             </div>

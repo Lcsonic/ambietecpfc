@@ -128,6 +128,17 @@ $resultado_empresa = mysqli_query($conn, $result_empresa);
                                 </div>
                             </div>
 
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <label for="senha">Senha </label><span class="asterisco-ver">*</span>
+                                    <input type="password" name="senha" class="form-control" id="senhaJS" value="<?php echo $dado['senha_empresa']; ?>">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="confSenha">Confirmar senha </label><span class="asterisco-ver">*</span>
+                                    <input type="password" name="confSenha" class="form-control" id="confSenhaJS" value="<?php echo $dado['confSenha_empresa'];?>">
+                                </div>
+                            </div>
+
                             <div class="form-group buttons">
                                 <a class="btn btn-danger buttons" href="empresas.php">Voltar</a>
                                 <input type="submit" value="Editar" class="btn btn-success buttons">

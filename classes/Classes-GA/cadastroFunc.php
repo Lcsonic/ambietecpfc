@@ -28,14 +28,14 @@ $rg =  $_POST['rg'];
 $dataNascimento =  $_POST['dataNascimento'];
 //$dataNascimento = date_format($dataNascimento, 'd/m/y');
 $date = date_create($dataNascimento);
-echo date_format($date, 'Y/m/d');
+date_format($date, 'Y/m/d');
 $cnh =  $_POST['cnh'];
 $categoria =  $_POST['categoria'];
 $ctps =  $_POST['ctps'];
 $nomeMae =  $_POST['nomeMae'];
 $emailFuncionario =  $_POST['emailFuncionario'];
 $escolaridade =  $_POST['escolaridade'];
-$telefone=  $_POST['telefone'];
+$telefone =  $_POST['telefone'];
 $telefoneOpc =  $_POST['telefoneOpc'];
 $endereco =  $_POST['endereco'];
 $numero =  $_POST['numero'];
@@ -46,6 +46,7 @@ $uf =  $_POST['uf'];
 $senhaFuncionario = md5($_POST['senhaFuncionario']);
 $confSenhaFuncionario = md5($_POST['confSenhaFuncionario']);
 
+
 if ($_POST) {
 	if ($senhaFuncionario == "") {
 		$mensagem = "<span class='aviso'><b>Aviso</b>: Senha não foi alterada!</span>";
@@ -53,14 +54,16 @@ if ($_POST) {
 		$mensagem = "<span class='sucesso'><b>Sucesso</b>: Cadastrado com sucesso</span>";
 		$insert_funcionario = "CALL `green_alert`.`PROC_IN_FUNCIONARIO`('$cpf','$nomeFuncionario','$rg','$dataNascimento',
 		'$cnh','$categoria','$ctps','$nomeMae','$emailFuncionario','$escolaridade','$telefone','$telefoneOpc','$endereco',
-		'$numero','$bairro','$cidade','$cep','$uf','$senhaFuncionario','$confSenhaFuncionario')";
+		'$numero','$bairro','$cidade','$cep','$uf','$senhaFuncionario','$confSenhaFuncionario',2)";
 		$result_funcionario = mysqli_query($conn, $insert_funcionario);
-		
+		header("Location: ./../../menu.php");
 	} else {
 		$mensagem = "<span class='erro'><b>Erro</b>: As senhas não conferem!</span>";
 	}
 	echo "<p id='mensagem'>" . $mensagem . "</p>";
 }
+
+		
 
 
 /* Teste */

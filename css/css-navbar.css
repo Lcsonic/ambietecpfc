@@ -1,7 +1,7 @@
 .all{
-
-  /*border: solid 1px;
-  border-color: black;*/
+    position: relative;
+    min-height: 100%;
+  margin: auto;
   overflow:hidden;
 }
 

@@ -104,7 +104,7 @@ $resultado_empresa = mysqli_query($conn, $result_empresa);
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="cadastroFuncionario.php">Cadastrar</a>
-                                    <a class="dropdown-item" href="#">Editar</a>
+                                    <a class="dropdown-item" href="funcionario.php">Editar</a>
                                 </div>
                             </li>
 
@@ -113,7 +113,7 @@ $resultado_empresa = mysqli_query($conn, $result_empresa);
                                     Órgão Lic.
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="cadastroFuncionario.php">Cadastrar</a>
+                                    <a class="dropdown-item" href="#">Cadastrar</a>
                                     <a class="dropdown-item" href="#">Editar</a>
                                 </div>
                             </li>
@@ -196,13 +196,18 @@ $resultado_empresa = mysqli_query($conn, $result_empresa);
                                     <div class="buttonsA">
                                         <a href="visualizarEmp.php?id=<?php echo $dado['id_empresa']; ?>" class="btn btn-primary">View</a>
                                         <a href="editarEmpresa.php?id=<?php echo $dado['id_empresa']; ?>" class="btn btn-success">Editar</a>
-                                        <a href="./classes/Classes-GA/apagarEmp.php?id=<?php echo $dado['id_empresa']; ?>" class="btn btn-xs btn-danger">Apagar</a>
+                                        <a href="./classes/Classes-GA/apagarEmp.php?id=<?php echo $dado['id_empresa']; ?>" class="btn btn-xs btn-danger" onclick="Deleta()">Apagar</a>
                                     </div>
                                 </td>
                             </tr>
 
                         <?php }  ?>
                     </tbody>
+                    <script>
+                        function Deleta() {
+                            alert('Empresa Deletada com Sucesso');
+                        }
+                    </script>
 
                 </table>
             </div>
@@ -246,4 +251,3 @@ $resultado_empresa = mysqli_query($conn, $result_empresa);
         });
     });
 </script>
-

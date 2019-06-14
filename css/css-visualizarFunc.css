@@ -1,0 +1,48 @@
+* { box-sizing: border-box;}
+
+body{margin: 0;
+  height: 100%;
+}
+
+.corpo {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  height: 100%;
+  margin:  10vh;
+}
+
+.topo{
+  margin: 0vh 0 5vh 15vh;
+  display:flex;
+  min-height: 30px;
+  color: rgb(4, 118, 248);
+}
+
+.nome,.Senhas,.Permissão {
+padding: 0px 55em 0px 0px;
+}
+
+.email {
+    padding: 0px 45em 0px 0px;
+}
+
+.senha {
+    display: flex;
+}
+.flex-center-center {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+
+
+.buttons{
+  margin: 50px 0px;
+}
+
+.asterisco-ver{
+  color: red;
+} 
+

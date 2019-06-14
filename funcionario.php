@@ -16,6 +16,17 @@ if ($_SESSION['Logado'] = true && $_SESSION['usuarioNiveisAcessoId'] == "3") { /
 } else { }
 ?>
 
+
+<?php
+//Incluindo Conexão
+include("classes/conexao.php");
+
+//Criando a consulta no banco de dados
+$result_funcionario = "SELECT * FROM usuarios;";
+$resultado_funcionario = mysqli_query($conn, $result_funcionario);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,11 +34,29 @@ if ($_SESSION['Logado'] = true && $_SESSION['usuarioNiveisAcessoId'] == "3") { /
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ambietec</title>
-    <!-- Imports !-->
-    <link rel="stylesheet" href="./css/css-navbar.css">
-    <link rel="stylesheet" href="./css/css-menu.css">
+    <title>Empresas</title>
+    <!-- -->
+    <!-- Imports -->
+    <link rel="stylesheet" href="./css/css-empresas.css"> <!-- css da página de listar empresas !-->
+    <link rel="stylesheet" href="./css/css-navbar.css"> <!-- css do navbar de todas as páginas !-->
+    <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- DataTables css -->
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+
+    <!-- Script imports -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css"></script>
+    <script src="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css"></script>
+
+
 
 </head>
 
@@ -75,7 +104,7 @@ if ($_SESSION['Logado'] = true && $_SESSION['usuarioNiveisAcessoId'] == "3") { /
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="cadastroFuncionario.php">Cadastrar</a>
-                                    <a class="dropdown-item" href="funcionario.php">Editar</a>
+                                    <a class="dropdown-item" href="#">Editar</a>
                                 </div>
                             </li>
 
@@ -84,7 +113,7 @@ if ($_SESSION['Logado'] = true && $_SESSION['usuarioNiveisAcessoId'] == "3") { /
                                     Órgão Lic.
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="#">Cadastrar</a>
+                                    <a class="dropdown-item" href="cadastroFuncionario.php">Cadastrar</a>
                                     <a class="dropdown-item" href="#">Editar</a>
                                 </div>
                             </li>
@@ -94,12 +123,12 @@ if ($_SESSION['Logado'] = true && $_SESSION['usuarioNiveisAcessoId'] == "3") { /
                                     Documentos
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    
+
                                     <a class="dropdown-item" href="">Cadastrar</a>
                                     <a class="dropdown-item" href="">Listar</a>
                                 </div>
 
-                                
+
                             </li>
 
                             <li class="nav-item">
@@ -124,14 +153,73 @@ if ($_SESSION['Logado'] = true && $_SESSION['usuarioNiveisAcessoId'] == "3") { /
             </div>
 
         </div>
+
         <div class="divisoria">
             <hr>
         </div>
-        <div class="imgMeio">
-            <!-- imagem do centro da página !-->
-            <img src="Imagens/ambietecLogoMenu.png" alt="imagemLogo" width=800px>
+
+        <div class="areaBranca">
+
+            <div class="descrAba">
+
+                <div class="descrImg">
+                    <img src="https://cdn0.iconfinder.com/data/icons/lined-global-business/48/a-14-512.png" alt="" width=47px>
+                </div>
+
+                <div class="descrTxt">
+                    Painel de Funcionário
+                </div>
+
+            </div>
+
+            <div class="listarDT">
+                <table id="listar-empresa" class="table table-striped table-bordered" style="width:100%">
+                    <!--Cabeçalho-->
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>CPF</th>
+                            <th>Telefone</th>
+                            <th>E-mail</th>
+                            <th>Ações</th>
+                            <!-- <th>Ações</th> -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php while ($dado = $resultado_funcionario->fetch_array()) { ?>
+                            <tr>
+                                <td><?php echo $dado['nome']; ?></td>
+                                <td><?php echo $dado['cpf']; ?></td>
+                                <td><?php echo $dado['telefone']; ?></td>
+                                <td><?php echo $dado['email']; ?></td>
+                                <td>
+                                    <div class="buttonsA">
+                                        <a href="visualizarFunc.php?id=<?php echo $dado['id']; ?>" class="btn btn-primary">View</a>
+                                        <a href="editarFuncionario.php?id=<?php echo $dado['id']; ?>" class="btn btn-success">Editar</a>
+                                        <a href="./classes/Classes-GA/apagarFunc.php?id=<?php echo $dado['id']; ?>" class="btn btn-xs btn-danger" onclick="Deleta()">Apagar</a>
+                                    </div>
+                                </td>
+                            </tr>
+
+                        <?php }  ?>
+                    </tbody>
+                    <script>
+                        function Deleta() {
+                            alert('Funcionario Deletado com Sucesso');
+                        }
+                    </script>
+
+                </table>
+            </div>
+
+            <div class="btnCadastro">
+                <a href="cadastroFuncionario.php">
+                    <!-- Link para pagina "cadastroFuncionario.php" !-->
+                    <button type="button" class="btn btn-primary">Adicionar Funcionario</button>
+                </a>
+            </div>
+
         </div>
-    </div>
 
     </div>
 
@@ -141,6 +229,25 @@ if ($_SESSION['Logado'] = true && $_SESSION['usuarioNiveisAcessoId'] == "3") { /
 
 </html>
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script type="text/javascript">
+    $('#exampleModal').on('show.bs.modal', function(event) {
+        var button = $(event.relatedTarget) // Button that triggered the modal
+        var recipient = button.data('whatever') // Extract info from data-* attributes
+        // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+        // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+        var modal = $(this)
+        modal.find('.modal-title').text('New message to ' + recipient)
+        modal.find('.modal-body input').val(recipient)
+    })
+</script>
+
+<script>
+    $(document).ready(function() {
+        $('#listar-empresa').DataTable({
+            "lengthMenu": [5, 10, 15, 20, 25],
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/Portuguese-Brasil.json"
+            }
+        });
+    });
+</script>
