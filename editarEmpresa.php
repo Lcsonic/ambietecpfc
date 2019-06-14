@@ -56,7 +56,7 @@ $resultado_empresa = mysqli_query($conn, $result_empresa);
 
                             <div class="form-group">
                                 <label for="nomeEmpresa">Nome da Empresa </label><span class="asterisco-ver">*</span>
-                                <input type="text" class="form-control" name="nomeEmpresa" id="nomeEmpresaJS" value="<?php echo $dado['razaoSocial_empresa']; ?> "  > 
+                                <input type="text" class="form-control" name="nomeEmpresa" id="nomeEmpresaJS" value="<?php echo $dado['razaoSocial_empresa']; ?> ">
 
                                 <label for="nomeFantasia">Nome Fantasia </label><span class="asterisco-ver">*</span>
                                 <input type="text" class="form-control" name="nomeFantasia" id="nomeFantasiaJS" value="<?php echo $dado['nomeFantasia_empresa']; ?>">
@@ -129,6 +129,7 @@ $resultado_empresa = mysqli_query($conn, $result_empresa);
                             </div>
 
                             <div class="form-group buttons">
+                                <a class="btn btn-danger buttons" href="empresas.php">Voltar</a>
                                 <input type="submit" value="Editar" class="btn btn-success buttons">
                             </div>
 

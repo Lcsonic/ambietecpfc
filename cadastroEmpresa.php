@@ -101,7 +101,7 @@ if ($_SESSION['Logado'] = true && $_SESSION['usuarioNiveisAcessoId'] == "3") { /
 
           <div class="form-row df">
 
-            <div class="form-group col-md-2">
+            <div class="form-group col-md-1.5">
               <label for="numero">Número </label><span class="asterisco-ver">*</span>
               <input type="text" class="form-control" name="numero" id="numeroJS" placeholder="Número" required>
             </div>

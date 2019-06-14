@@ -43,7 +43,7 @@ if ($_SESSION['Logado'] = true && $_SESSION['usuarioNiveisAcessoId'] == "3") { /
     </div>
 
     <div class="Info flex-center-center">
-      <form method="POST" action="./classes/Classes-GA/cadastroFunc.php">
+      <form method="POST" action="./classes/Classes-GA/cadastroFunc.php" id="formID">
         <!-- Inicio do formulario -->
         <div class="informacoesesquerda">
           <div class="form-row">
@@ -70,13 +70,17 @@ if ($_SESSION['Logado'] = true && $_SESSION['usuarioNiveisAcessoId'] == "3") { /
 
           <div class="form-row">
             <div class="form-group col-md-3">
-              <label for="cnh">CNH</label><span class="asterisco-ver">*</span>
-              <input type="text" class="form-control" name="cnh" id="cnhJS" placeholder="CNH" required>
+              <label for="cnh">CNH</label>
+              <input type="text" class="form-control" name="cnh" id="cnhJS" placeholder="CNH">
             </div>
 
             <div class="form-group col-md-2">
-              <label for="categoria">Categoria</label><span class="asterisco-ver">*</span>
-              <input type="text" class="form-control" name="categoria" id="categoriaJS" placeholder="Categoria" required>
+              <label for="categoria">Categoria </label>
+              <select class="form-control" name="categoria" id="categoriaJS">
+                <option>--Selecione--</option>
+                <option value="A">A</option>
+                <option value="B">B</option>
+              </select>
             </div>
 
             <div class="form-group col-md-3">
@@ -194,7 +198,18 @@ if ($_SESSION['Logado'] = true && $_SESSION['usuarioNiveisAcessoId'] == "3") { /
 
           <script>
             function Salvo() {
-              alert(document.getElementById("Adicionar").style.display = 'Cadastrado com sucesso');;
+              senhaJS = document.getElementById("senhaJS");
+              confSenhaJS = document.getElementById("confSenhaJS");
+
+              if (senhaJS.value != "" && confSenhaJS.value != "") {
+                if (senhaJS.value != confSenhaJS.value) {
+                  alert('Senhas diferentes!');
+                } else {
+                  alert('Cadastrado com sucesso!');
+                }
+              } else {
+                alert('Preencha os campos!');
+              }
             }
           </script>
 

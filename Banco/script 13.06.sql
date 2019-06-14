@@ -1,8 +1,10 @@
--- MySQL dump 10.16  Distrib 10.1.38-MariaDB, for Win64 (AMD64)
+CREATE DATABASE  IF NOT EXISTS `green_alert` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `green_alert`;
+-- MySQL dump 10.16  Distrib 10.1.39-MariaDB, for Win64 (AMD64)
 --
 -- Host: 127.0.0.1    Database: green_alert
 -- ------------------------------------------------------
--- Server version	10.1.38-MariaDB
+-- Server version	10.1.39-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -42,7 +44,7 @@ CREATE TABLE `cliente_empresa` (
   `confSenha_empresa` varchar(50) NOT NULL,
   `niveis_acesso_id` int(1) NOT NULL,
   PRIMARY KEY (`id_empresa`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -51,7 +53,7 @@ CREATE TABLE `cliente_empresa` (
 
 LOCK TABLES `cliente_empresa` WRITE;
 /*!40000 ALTER TABLE `cliente_empresa` DISABLE KEYS */;
-INSERT INTO `cliente_empresa` VALUES (1,'Eu','Eu','Eu','Eu','Eu','Eu','Eu','Eu','Eu',65,'Eu','Eu','Eu','Eu','Eu','Eu',0),(2,'0','0','0','0@0','0','0','0','0','0',0,'0','0','0','MG','0','0',0),(3,'a','a','a','a@a','a','a','a','a','a',0,'a','a','a','AC','a','a',0),(4,'1324135','1351','cxfc','315@51','15','35135','153','3513','165',165,'651','165','165','AC','123','123',0),(5,'651651','615','156','16@651','156','165','156','165','165',651,'165','165','156','AC','123','123',0),(6,'155','155','155','155@155','155','115','','155','155',155,'155','155','155','PB','155','155',2),(7,'Seu JoÃ£o','Padaria do JoÃ£o','6516516','Joao@Padaria.com','d','b','c','a','rua',1,'1','1','1','AC','202cb962ac59','202cb962ac59',3),(8,'jão','joão','5445','a@a','a','a','a','a','a',0,'a','a','a','AC','0cc175b9c0f1','0cc175b9c0f1',3),(9,'Teste','Teste2','65165','Teste@Teste','12','12','12','12','12',12,'12','12','12','AC','202cb962ac59','202cb962ac59',3),(10,'1','1','1','1@1','1','1','1','1','1',1,'1','1','1','AC','202cb962ac59','202cb962ac59',3),(11,'Tentativa','TentativaFantasia','1651561','Tentativa@gmail.com','156','15165','','Teste','a',1,'1','1','1','AC','202cb962ac59','202cb962ac59',3),(12,'lucas motos','luquinhasMotos','456789','lucas2@lucas.com','Lucas','36226220','6227877','venda de motos, as vezes drogas','rua da puta que te pariu seu viado',5,'centro','camaçari','527800','BA','4297f44b13955235245b2497399d7a93','4297f44b13955235245b2497399d7a93',3),(13,'MatheusIM','Matheus Informatica','0651516','Matheus@Maia.com','Matheus','7198416165','','Desenvolvimento','Rua Atras',12,'Itapuã','Salvador','5130516','BA','202cb962ac59075b964b07152d234b70','202cb962ac59075b964b07152d234b70',3);
+INSERT INTO `cliente_empresa` VALUES (12,'lucas motos','luquinhasMotos','456789','lucas2@lucas.com','Lucas','36226220','6227877','venda de motos, as vezes drogas','rua da puta que te pariu seu viado',5,'centro','camaçari','527800','BA','4297f44b13955235245b2497399d7a93','4297f44b13955235245b2497399d7a93',3),(13,'MatheusIM','Matheus Informatica','0651516','Matheus@Maia.com','Matheus','7198416165','','Desenvolvimento','Rua Atras',12,'Itapuã','Salvador','5130516','BA','202cb962ac59075b964b07152d234b70','202cb962ac59075b964b07152d234b70',3),(14,'Ambietec - Tecnologias & Soluções Ambientais Inovadoras LTDA ','Ambietec - Tecnologias & Soluções Ambientais','18.885.231/0001-83','deividalcantara@yahoo.com.br','Deivid Alcantara','71 98181-2367','','Soluções e Tecnologias','Tv. Abelardo Andrea',33,'Centro','Lauro de Freitas','42.700-130','BA','1f99c8a687de5b829addfce79383827a','1f99c8a687de5b829addfce79383827a',3);
 /*!40000 ALTER TABLE `cliente_empresa` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -276,13 +278,29 @@ DROP TABLE IF EXISTS `usuarios`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nome` varchar(200) NOT NULL,
-  `email` varchar(200) NOT NULL,
+  `cpf` varchar(40) NOT NULL,
+  `nome` varchar(100) NOT NULL,
+  `rg` varchar(50) NOT NULL,
+  `dataNascimento` date NOT NULL,
+  `cnh` varchar(45) DEFAULT NULL,
+  `categoria` varchar(1) DEFAULT NULL,
+  `ctps` varchar(45) NOT NULL,
+  `nomeMae` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `escolaridade` varchar(75) NOT NULL,
+  `telefone` varchar(40) NOT NULL,
+  `telefoneOpc` varchar(40) DEFAULT NULL,
+  `endereco` varchar(70) NOT NULL,
+  `numero` varchar(10) NOT NULL,
+  `bairro` varchar(70) NOT NULL,
+  `cidade` varchar(70) NOT NULL,
+  `cep` varchar(40) NOT NULL,
+  `uf` varchar(2) NOT NULL,
   `senha` varchar(50) NOT NULL,
   `confSenha` varchar(50) NOT NULL,
   `niveis_acesso_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=56 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -291,9 +309,13 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'Matheus Maia','Matheus@Maia.com','202cb962ac59075b964b07152d234b70','',1),(2,'Lucas','Lucas@Lucas.com','123','123',2),(3,'Elida Nunes','Elida@Nunes.com','123','123',2),(4,'Lucao','lucao@lucao.com','sonic301101','sonc301101',2),(5,'1','1@1','1','1',2),(6,'2','2@2','2','2',2),(7,'3','3@3','123','123',2),(8,'4','4@4','4','4',2),(9,'5','5@5','5','5',2),(10,'6','6@6','6','6',2),(11,'6','6@6','6','6',2),(12,'Maquina','10@10','10','10',2),(13,'teste','teste@1','1','1',2),(14,'42','11@1','1','1',2),(15,'Teste','Teste@Teste','c20ad4d76fe97759aa27a0c99bff6710','12',2),(16,'caique','caique@zogbi.com','df10ef8509dc176d733d59549e7dbfaf','123456abc',2),(17,'TesteSenha','Teste@Senha','14','15',2),(18,'TesteSenhaFuncional','Teste@SenhaFuncional','123','123',2),(19,'Helvecio','Helvecio@gmail.com','123','123',2),(20,'teste6165','teste@teste5','123','123',2),(21,'aaaaaa','aaa@aaa','123','123',2),(22,'md5','md5@f','ab','ab',2),(23,'md5dnv','t@t','123','123',2),(24,'bbb','bb@bb','bb','bb',2),(25,'aa','aa@aa','aa','aa',2),(26,'ll','ll@ll','5b54c0a045f179bcbbbc9abcb8b5cd4c','ll',2),(27,'Helvecio','helvecio@gmail.com','202cb962ac59075b964b07152d234b70','202cb962ac59075b964b07152d234b70',2),(28,'p','p@p','6c8349cc7260ae62e3b1396831a8398f','6c8349cc7260ae62e3b1396831a8398f',2),(29,'kk','kk@kk','9f61408e3afb633e50cdf1b20de6f466','9f61408e3afb633e50cdf1b20de6f466',2),(30,'bb','bb@bb','202cb962ac59075b964b07152d234b70','202cb962ac59075b964b07152d234b70',2),(31,'mn','mn@mn','aab3238922bcc25a6f606eb525ffdc56','aab3238922bcc25a6f606eb525ffdc56',2),(32,'llll','lllll@lllll','7647966b7343c29048673252e490f736','7647966b7343c29048673252e490f736',2),(33,'aaaaaaaaaaaaaaaaaaaa','aaaaa@aaaa','aab3238922bcc25a6f606eb525ffdc56','aab3238922bcc25a6f606eb525ffdc56',2),(34,'25','25@25','8e296a067a37563370ded05f5a3bf3ec','8e296a067a37563370ded05f5a3bf3ec',2),(35,'Lucas','Lucas@Lucas.com','123','123',2),(36,'fasf','afg@faf','202cb962ac59075b964b07152d234b70','202cb962ac59075b964b07152d234b70',2),(37,'Teste','Teste@Teste','202cb962ac59075b964b07152d234b70','202cb962ac59075b964b07152d234b70',2),(38,'Teste','Teste@Teste','202cb962ac59075b964b07152d234b70','202cb962ac59075b964b07152d234b70',2),(39,'a','a@a','0cc175b9c0f1b6a831c399e269772661','0cc175b9c0f1b6a831c399e269772661',2),(40,'b','b@b','92eb5ffee6ae2fec3ad71c777531578f','92eb5ffee6ae2fec3ad71c777531578f',2),(41,'c@c','c@c','202cb962ac59075b964b07152d234b70','202cb962ac59075b964b07152d234b70',2),(42,'l','l@l','c4ca4238a0b923820dcc509a6f75849b','c4ca4238a0b923820dcc509a6f75849b',2),(43,'Lucas','Lucas@gmail.com','202cb962ac59075b964b07152d234b70','202cb962ac59075b964b07152d234b70',2),(44,'Elida','Elida@gmail.com','202cb962ac59075b964b07152d234b70','202cb962ac59075b964b07152d234b70',2),(45,'Lucas','Lucas@Lucas.com','123','123',2),(46,'Lucas','Lucas@Lucas.com','123','123',2),(47,'Lucas','Lucas@Lucas.com','123','123',2),(48,'Lucas','Lucas@Lucas.com','123','123',2),(49,'Lucas','Lucas@Lucas.com','123','123',2);
+INSERT INTO `usuarios` VALUES (1,'','Matheus Maia','','0000-00-00',NULL,NULL,'','','Matheus@Maia.com','','',NULL,'','0','','','','','202cb962ac59075b964b07152d234b70','',1),(2,'','Lucas','','0000-00-00',NULL,NULL,'','','Lucas@Lucas.com','','',NULL,'','0','','','','','123','123',2),(3,'','Elida Nunes','','0000-00-00',NULL,NULL,'','','Elida@Nunes.com','','',NULL,'','0','','','','','123','123',2),(4,'','Lucao','','0000-00-00',NULL,NULL,'','','lucao@lucao.com','','',NULL,'','0','','','','','sonic301101','sonc301101',2),(5,'','1','','0000-00-00',NULL,NULL,'','','1@1','','',NULL,'','0','','','','','1','1',2),(6,'','2','','0000-00-00',NULL,NULL,'','','2@2','','',NULL,'','0','','','','','2','2',2),(7,'','3','','0000-00-00',NULL,NULL,'','','3@3','','',NULL,'','0','','','','','123','123',2),(8,'','4','','0000-00-00',NULL,NULL,'','','4@4','','',NULL,'','0','','','','','4','4',2),(9,'','5','','0000-00-00',NULL,NULL,'','','5@5','','',NULL,'','0','','','','','5','5',2),(10,'','6','','0000-00-00',NULL,NULL,'','','6@6','','',NULL,'','0','','','','','6','6',2),(11,'','6','','0000-00-00',NULL,NULL,'','','6@6','','',NULL,'','0','','','','','6','6',2),(12,'','Maquina','','0000-00-00',NULL,NULL,'','','10@10','','',NULL,'','0','','','','','10','10',2),(13,'','teste','','0000-00-00',NULL,NULL,'','','teste@1','','',NULL,'','0','','','','','1','1',2),(14,'','42','','0000-00-00',NULL,NULL,'','','11@1','','',NULL,'','0','','','','','1','1',2),(15,'','Teste','','0000-00-00',NULL,NULL,'','','Teste@Teste','','',NULL,'','0','','','','','c20ad4d76fe97759aa27a0c99bff6710','12',2),(16,'','caique','','0000-00-00',NULL,NULL,'','','caique@zogbi.com','','',NULL,'','0','','','','','df10ef8509dc176d733d59549e7dbfaf','123456abc',2),(17,'','TesteSenha','','0000-00-00',NULL,NULL,'','','Teste@Senha','','',NULL,'','0','','','','','14','15',2),(18,'','TesteSenhaFuncional','','0000-00-00',NULL,NULL,'','','Teste@SenhaFuncional','','',NULL,'','0','','','','','123','123',2),(19,'','Helvecio','','0000-00-00',NULL,NULL,'','','Helvecio@gmail.com','','',NULL,'','0','','','','','123','123',2),(20,'','teste6165','','0000-00-00',NULL,NULL,'','','teste@teste5','','',NULL,'','0','','','','','123','123',2),(21,'','aaaaaa','','0000-00-00',NULL,NULL,'','','aaa@aaa','','',NULL,'','0','','','','','123','123',2),(22,'','md5','','0000-00-00',NULL,NULL,'','','md5@f','','',NULL,'','0','','','','','ab','ab',2),(23,'','md5dnv','','0000-00-00',NULL,NULL,'','','t@t','','',NULL,'','0','','','','','123','123',2),(24,'','bbb','','0000-00-00',NULL,NULL,'','','bb@bb','','',NULL,'','0','','','','','bb','bb',2),(25,'','aa','','0000-00-00',NULL,NULL,'','','aa@aa','','',NULL,'','0','','','','','aa','aa',2),(26,'','ll','','0000-00-00',NULL,NULL,'','','ll@ll','','',NULL,'','0','','','','','5b54c0a045f179bcbbbc9abcb8b5cd4c','ll',2),(27,'','Helvecio','','0000-00-00',NULL,NULL,'','','helvecio@gmail.com','','',NULL,'','0','','','','','202cb962ac59075b964b07152d234b70','202cb962ac59075b964b07152d234b70',2),(28,'','p','','0000-00-00',NULL,NULL,'','','p@p','','',NULL,'','0','','','','','6c8349cc7260ae62e3b1396831a8398f','6c8349cc7260ae62e3b1396831a8398f',2),(29,'','kk','','0000-00-00',NULL,NULL,'','','kk@kk','','',NULL,'','0','','','','','9f61408e3afb633e50cdf1b20de6f466','9f61408e3afb633e50cdf1b20de6f466',2),(30,'','bb','','0000-00-00',NULL,NULL,'','','bb@bb','','',NULL,'','0','','','','','202cb962ac59075b964b07152d234b70','202cb962ac59075b964b07152d234b70',2),(31,'','mn','','0000-00-00',NULL,NULL,'','','mn@mn','','',NULL,'','0','','','','','aab3238922bcc25a6f606eb525ffdc56','aab3238922bcc25a6f606eb525ffdc56',2),(32,'','llll','','0000-00-00',NULL,NULL,'','','lllll@lllll','','',NULL,'','0','','','','','7647966b7343c29048673252e490f736','7647966b7343c29048673252e490f736',2),(33,'','aaaaaaaaaaaaaaaaaaaa','','0000-00-00',NULL,NULL,'','','aaaaa@aaaa','','',NULL,'','0','','','','','aab3238922bcc25a6f606eb525ffdc56','aab3238922bcc25a6f606eb525ffdc56',2),(34,'','25','','0000-00-00',NULL,NULL,'','','25@25','','',NULL,'','0','','','','','8e296a067a37563370ded05f5a3bf3ec','8e296a067a37563370ded05f5a3bf3ec',2),(35,'','Lucas','','0000-00-00',NULL,NULL,'','','Lucas@Lucas.com','','',NULL,'','0','','','','','123','123',2),(36,'','fasf','','0000-00-00',NULL,NULL,'','','afg@faf','','',NULL,'','0','','','','','202cb962ac59075b964b07152d234b70','202cb962ac59075b964b07152d234b70',2),(37,'','Teste','','0000-00-00',NULL,NULL,'','','Teste@Teste','','',NULL,'','0','','','','','202cb962ac59075b964b07152d234b70','202cb962ac59075b964b07152d234b70',2),(38,'','Teste','','0000-00-00',NULL,NULL,'','','Teste@Teste','','',NULL,'','0','','','','','202cb962ac59075b964b07152d234b70','202cb962ac59075b964b07152d234b70',2),(39,'','a','','0000-00-00',NULL,NULL,'','','a@a','','',NULL,'','0','','','','','0cc175b9c0f1b6a831c399e269772661','0cc175b9c0f1b6a831c399e269772661',2),(40,'','b','','0000-00-00',NULL,NULL,'','','b@b','','',NULL,'','0','','','','','92eb5ffee6ae2fec3ad71c777531578f','92eb5ffee6ae2fec3ad71c777531578f',2),(41,'','c@c','','0000-00-00',NULL,NULL,'','','c@c','','',NULL,'','0','','','','','202cb962ac59075b964b07152d234b70','202cb962ac59075b964b07152d234b70',2),(42,'','l','','0000-00-00',NULL,NULL,'','','l@l','','',NULL,'','0','','','','','c4ca4238a0b923820dcc509a6f75849b','c4ca4238a0b923820dcc509a6f75849b',2),(43,'','Lucas','','0000-00-00',NULL,NULL,'','','Lucas@gmail.com','','',NULL,'','0','','','','','202cb962ac59075b964b07152d234b70','202cb962ac59075b964b07152d234b70',2),(44,'','Elida','','0000-00-00',NULL,NULL,'','','Elida@gmail.com','','',NULL,'','0','','','','','202cb962ac59075b964b07152d234b70','202cb962ac59075b964b07152d234b70',2),(45,'','Lucas','','0000-00-00',NULL,NULL,'','','Lucas@Lucas.com','','',NULL,'','0','','','','','123','123',2),(46,'','Lucas','','0000-00-00',NULL,NULL,'','','Lucas@Lucas.com','','',NULL,'','0','','','','','123','123',2),(47,'','Lucas','','0000-00-00',NULL,NULL,'','','Lucas@Lucas.com','','',NULL,'','0','','','','','123','123',2),(48,'','Lucas','','0000-00-00',NULL,NULL,'','','Lucas@Lucas.com','','',NULL,'','0','','','','','123','123',2),(49,'','Lucas','','0000-00-00',NULL,NULL,'','','Lucas@Lucas.com','','',NULL,'','0','','','','','123','123',2),(50,'07732383524','Matheus Maia','54351655','0000-00-00','nsei','A','351351','J','Matheus@Maia.com','Não','1616468','','rua','0','itapuã','salvador','161656','sa','123','123',2),(51,'07732383524','Matheus Maia','54351655','0000-00-00','nsei','A','351351','J','Matheus@Maia.com','Não','1616468','','rua','0','itapuã','salvador','161656','sa','123','123',2),(52,'07732383524','Matheus Maia','54351655','0000-00-00','nsei','A','351351','J','Matheus@Maia.com','Não','1616468','','rua','0','itapuã','salvador','161656','sa','123','123',2),(53,'07732383524','Matheus Maia','54351655','0000-00-00','nsei','A','351351','J','Matheus@Maia.com','Não','1616468','','rua','0','itapuã','BA','161656','sa','123','123',2),(54,'07732383524','Matheus Maia','54351655','0000-00-00','nsei','A','351351','J','Matheus@Maia.com','Não','1616468','','rua','0','itapuã','salvador','161656','BA','123','123',2),(55,'07732383524','Matheus Maia','54351655','1999-09-15','nsei','A','351351','J','Matheus@Maia.com','Não','1616468','','rua','0','itapuã','salvador','161656','BA','123','123',2);
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Dumping events for database 'green_alert'
+--
 
 --
 -- Dumping routines for database 'green_alert'
@@ -367,22 +389,60 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `PROC_IN_FUNCIONARIO`(IN `nome` VARCHAR(200), IN `email` VARCHAR(200),IN `senha` VARCHAR(50),IN `confSenha` VARCHAR(50),IN `niveis_acesso_id` INT(1) )
+CREATE DEFINER=`root`@`localhost` PROCEDURE `PROC_IN_FUNCIONARIO`(IN `cpf` VARCHAR(40),
+IN `nome` VARCHAR(100),IN `rg` VARCHAR(50),IN `dataNascimento` DATE,
+IN `cnh` VARCHAR(45),IN `categoria` VARCHAR(1),IN `ctps` VARCHAR(45),
+IN `nomeMae` VARCHAR(100), IN `email` VARCHAR(200),
+IN `escolaridade` VARCHAR(100),IN `telefone` VARCHAR(40),
+IN `telefoneOpc` VARCHAR(40),IN `endereco` VARCHAR(70),IN `numero` VARCHAR(10),
+IN `bairro` VARCHAR(70),IN `cidade` VARCHAR(70),IN `cep` VARCHAR(40),
+IN `uf` VARCHAR(2),IN `senha` VARCHAR(50),IN `confSenha` VARCHAR(50),
+IN `niveis_acesso_id` INT(1))
 BEGIN
 INSERT INTO `green_alert`.`usuarios`
-(`nome`,
+(`cpf`,
+`nome`,
+`rg`,
+`dataNascimento`,
+`cnh`,
+`categoria`,
+`ctps`,
+`nomeMae`,
 `email`,
+`escolaridade`,
+`telefone`,
+`telefoneOpc`,
+`endereco`,
+`numero`,
+`bairro`,
+`cidade`,
+`cep`,
+`uf`,
 `senha`,
 `confSenha`,
-`niveis_acesso_id`
-)
+`niveis_acesso_id`)
 VALUES
-(nome,
+(cpf,
+nome,
+rg,
+dataNascimento,
+cnh,
+categoria,
+ctps,
+nomeMae,
 email,
+escolaridade,
+telefone,
+telefoneOpc,
+endereco,
+numero,
+bairro,
+cidade,
+cep,
+uf,
 senha,
 confSenha,
-niveis_acesso_id
-);
+niveis_acesso_id);
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -443,28 +503,6 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
-/*!50003 DROP PROCEDURE IF EXISTS `PROC_UP_EMPRESA` */;
-/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
-/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
-/*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8 */ ;
-/*!50003 SET character_set_results = utf8 */ ;
-/*!50003 SET collation_connection  = utf8_general_ci */ ;
-/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `PROC_UP_EMPRESA`(IN `razaoSocial_empresa` VARCHAR(255), IN `nomeFantasia_empresa` VARCHAR(255), IN `cnpj_empresa` VARCHAR(255), IN `email_empresa` VARCHAR(255), IN `responsavel_empresa` VARCHAR(255), IN `telefone_empresa` VARCHAR(255), IN `telefoneOpc_empresa` VARCHAR(255), IN `descricao_empresa` VARCHAR(255), IN `rua_endereco` VARCHAR(255), IN `numero_endereco` INT(5), IN `bairro_endereco` VARCHAR(255), IN `cidade_endereco` VARCHAR(255), IN `cep_endereco` VARCHAR(255), IN `uf_endereco` VARCHAR(255))
-BEGIN
-UPDATE cliente_empresa SET nomeEmpresa_empresa='$nomeEmpresa', nomeFantasia_empresa='$nomeFantasia', cnpj_empresa='$cnpj', 
-email_empresa='$email', responsavel_empresa='$responsavel', telefone_empresa='$telefone', telefoneOpc_empresa='$telefoneOpc', 
-descricao_empresa='$descAtv', rua_endereco='$endereco', numero_endereco='$numero', bairro_endereco='$bairro', cidade_endereco='$cidade',
-cep_endereco='$cep', uf_endereco='$uf' WHERE id_empresa ='$id';
-END ;;
-DELIMITER ;
-/*!50003 SET sql_mode              = @saved_sql_mode */ ;
-/*!50003 SET character_set_client  = @saved_cs_client */ ;
-/*!50003 SET character_set_results = @saved_cs_results */ ;
-/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -475,4 +513,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-06-12  1:40:29
+-- Dump completed on 2019-06-13 21:20:44
